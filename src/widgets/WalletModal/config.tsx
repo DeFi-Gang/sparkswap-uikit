@@ -15,17 +15,17 @@ const connectors: Config[] = [
   },
   {
     title: "Coinbase Wallet",
-    fallbackImage: '/images/wallets/coinbase.png',
+    fallbackImage: "/images/wallets/coinbase.png",
     connectorId: "walletlink",
   },
   {
     title: "Brave Wallet",
-    fallbackImage: '/images/wallets/brave.png',
+    fallbackImage: "/images/wallets/brave.png",
     connectorId: "injected",
   },
   {
     title: "Injected (Other)",
-    fallbackImage: '/images/wallets/other.png',
+    fallbackImage: "/images/wallets/other.png",
     connectorId: "injected",
   },
 ];

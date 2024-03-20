@@ -50,7 +50,9 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                 entry.items.map((item) => (
                   <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick}>
                     {item.openTab ? (
-                      <MenuLink target="_blank" href={item.href}>{item.label}</MenuLink>
+                      <MenuLink target="_blank" href={item.href}>
+                        {item.label}
+                      </MenuLink>
                     ) : (
                       <MenuLink href={item.href}>{item.label}</MenuLink>
                     )}

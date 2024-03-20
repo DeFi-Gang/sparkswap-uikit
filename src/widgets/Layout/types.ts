@@ -53,5 +53,5 @@ export interface NavProps extends HeaderNavProps, FooterLinks {
   login: Login;
   profile?: Profile;
   logout: () => void;
-  children: ReactNode;
+  children?: JSX.Element|JSX.Element[];
 }

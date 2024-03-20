@@ -30,7 +30,11 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => 
       <Text bold color="primary" mr="16px">
         {title}
       </Text>
-      {walletConfig.icon ? <walletConfig.icon width="32px" /> : (<Image src={walletConfig.fallbackImage ?? 'images/wallets/other.png'} alt={title} width={32} height={32} />)}
+      {walletConfig.icon ? (
+        <walletConfig.icon width="32px" />
+      ) : (
+        <Image src={walletConfig.fallbackImage ?? "images/wallets/other.png"} alt={title} width={32} height={32} />
+      )}
     </Button>
   );
 };
