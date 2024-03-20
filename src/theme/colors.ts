@@ -1,12 +1,19 @@
 import { Colors } from "./types";
 
 export const baseColors = {
-  failure: "#ED4B9E",
-  primary: "#bc0fc8",
-  primaryBright: "#bc0fc8",
-  primaryDark: "#bc0fc8",
-  secondary: "#bc0fc8",
-  success: "#31D0AA",
+  failure: "#CD1B3E",
+  failureBright: "#9A1530",
+  failureDark: "#420A23",
+  primary: "#1F17F7",
+  primaryBright: "#2D27C3",
+  primaryMedium: "#0E0E50",
+  primaryDark: "#0D0A30",
+  secondary: "#8E067E",
+  secondaryBright: "#EC10BC",
+  secondaryDark: "#440248",
+  success: "#98E31A",
+  successBright: "#649315",
+  successDark: "#314618",
   warning: "#FFB237",
 };
 
@@ -18,19 +25,21 @@ export const brandColors = {
 export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
-  background: "#FAF9FA",
-  backgroundDisabled: "#ebe9eb",
+  background: "#13161E",
+  backgroundDisabled: "#191459",
   contrast: "#241326",
   invertedContrast: "#FFFFFF",
-  input: "#f3eaf4",
+  input: "#231A85",
   tertiary: "#f4eff5",
-  text: "#bc0fc8",
+  text: "#FFFFFF",
   textDisabled: "#c0bdc4",
-  textSubtle: "#ba80b5",
+  textSubtle: "#B8B6CB",
   borderColor: "#eae9eb",
-  card: "#FFFFFF",
+  card: "#0F0749",
+  headerBackground: "#01060A",
   gradients: {
     bubblegum: "linear-gradient(139.73deg, #ebe6ff 0%, #fdefff 100%)",
+    main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
   },
 };
 
@@ -38,7 +47,7 @@ export const darkColors: Colors = {
   ...baseColors,
   ...brandColors,
   secondary: "#bc0fc8",
-  background: "#353135",
+  background: "green",
   backgroundDisabled: "#423742",
   contrast: "#FFFFFF",
   invertedContrast: "#261325",
@@ -50,7 +59,9 @@ export const darkColors: Colors = {
   textSubtle: "#d2c4d4",
   borderColor: "#634b63",
   card: "#2c262c",
+  headerBackground: "#01060A",
   gradients: {
     bubblegum: "linear-gradient(139.73deg, #45315c 0%, #542a50 100%)",
+    main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
   },
 };
