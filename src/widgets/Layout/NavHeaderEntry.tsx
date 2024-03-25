@@ -18,7 +18,7 @@ const NavHeaderEntry = styled.div<Props>`
   gap: 4px;
   display: flex;
   align-items: center;
-  color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : theme.colors.tertiary)};
+  color: ${({ theme, isActive }) => (isActive ? theme.colors.secondaryBright : theme.colors.tertiary)};
 
   a {
     display: flex;
@@ -34,16 +34,16 @@ const NavHeaderEntry = styled.div<Props>`
     fill: none;
     svg {
       path {
-        stroke: ${({ theme, isActive }) => (isActive ? theme.colors.primaryBright : theme.colors.primaryBright)};
+        stroke: ${({ theme, isActive }) => (isActive ? theme.colors.primaryBright : theme.colors.tertiary)};
       }
     }
   }
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primaryBright};
+    color: ${({ theme }) => theme.colors.secondary};
     svg {
       path {
-        stroke: ${({ theme }) => theme.colors.primaryBright};
+        stroke: ${({ theme }) => theme.colors.secondary};
       }
     }
   }

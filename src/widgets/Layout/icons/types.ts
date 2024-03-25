@@ -5,4 +5,5 @@ export type IconType =
   | "TelegramIcon"
   | "YoutubeIcon"
   | "DiscordIcon"
-  | "TwitterIcon";
+  | "TwitterIcon"
+  | "LogoIcon";

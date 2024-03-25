@@ -17,7 +17,6 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
           isActive: activeIndex === index,
           onClick: onClick ? () => onClick(index) : undefined,
           size,
-          variant,
         });
       })}
     </StyledButtonMenu>

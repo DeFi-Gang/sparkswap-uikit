@@ -264,6 +264,6 @@ export const linksSpark = [
 
 export const MENU_HEIGHT = 80;
 export const FOOTER_HEIGHT = 138;
-export const FOOTER_HEIGHT_MOBILE = 243;
+export const FOOTER_HEIGHT_MOBILE = 281;
 export const MENU_ENTRY_HEIGHT = 22;
 export const SIDEBAR_WIDTH_FULL = 220;

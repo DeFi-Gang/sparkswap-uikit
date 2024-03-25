@@ -25,5 +25,6 @@ export * from "./widgets/Modal";
 export * from "./widgets/Toast";
 export * from "./widgets/WalletModal";
 export * from "./widgets/Layout";
+export * from "./widgets/Layout/UserBlock";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";

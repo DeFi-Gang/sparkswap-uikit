@@ -55,7 +55,12 @@ const MobileMenuSideBar: FC<Props> = (props) => {
     <StyledPanel showMenu={showMenu}>
       <MobileMenuBody {...props} />
       <StyledFlex>
-        <UserBlock account={account} login={login} logout={logout} />
+        <UserBlock
+          account={account}
+          login={login}
+          logout={logout}
+          inHeader
+        />
         {profile && <Avatar profile={profile} />}
       </StyledFlex>
     </StyledPanel>

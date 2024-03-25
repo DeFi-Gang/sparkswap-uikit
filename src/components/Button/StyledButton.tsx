@@ -47,9 +47,12 @@ const getButtonVariantProp = (prop: keyof ButtonThemeVariant) => ({
 
 const StyledButton = styled.button<ButtonProps>`
   align-items: center;
-  background-color: ${getButtonVariantProp("background")};
+  background-size: 150% auto;
+  background-color: ${(props) =>
+    props.variant === variants.PRIMARY ? "none" : getButtonVariantProp("background")(props)};
+  background-image: ${(props) => (props.variant === variants.PRIMARY ? props.theme.colors.gradients.button : "none")};
   border: ${getButtonVariantProp("border")};
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: ${getButtonVariantProp("boxShadow")};
   color: ${getButtonVariantProp("color")};
   cursor: pointer;
@@ -59,18 +62,22 @@ const StyledButton = styled.button<ButtonProps>`
   font-weight: 600;
   /* max-content instead of auto for Safari fix */
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "max-content")};
-  height: ${({ size }) => (size === "sm" ? "32px" : "48px")};
+  height: ${({ size }) => (size === "sm" ? "32px" : "42px")};
   line-height: 1;
   letter-spacing: 0.03em;
   justify-content: center;
   outline: 0;
   padding: ${({ size }) => (size === "sm" ? "0 16px" : "0 24px")};
-  transition: background-color 0.2s;
+  transition: ${(props) => (props.variant === variants.PRIMARY ? "0.4s" : "background-color 0.2s")};
   opacity: ${({ isLoading }) => (isLoading ? 0.5 : 1)};
 
   &:hover:not(:disabled):not(.button--disabled):not(:active) {
-    background-color: ${getButtonVariantProp("backgroundHover")};
+    background-color: ${(props) =>
+      props.variant === variants.PRIMARY ? "none" : getButtonVariantProp("backgroundHover")(props)};
+    background-image: ${(props) => (props.variant === variants.PRIMARY ? props.theme.colors.gradients.main : "none")};
+
     border-color: ${getButtonVariantProp("borderColorHover")};
+    background-position: right center;
   }
 
   &:focus:not(:active) {

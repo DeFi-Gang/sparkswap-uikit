@@ -1,5 +1,5 @@
 import { ButtonTheme, variants } from "./types";
-import { lightColors, darkColors } from "../../theme/colors";
+import { lightColors, darkColors, baseColors } from "../../theme/colors";
 
 const { PRIMARY, SECONDARY, TERTIARY, TEXT, DANGER, SUBTLE, SUCCESS } = variants;
 
@@ -15,34 +15,34 @@ export const light: ButtonTheme = {
     color: "#FFFFFF",
   },
   [SECONDARY]: {
-    background: "transparent",
+    background: lightColors.background,
     backgroundActive: "transparent",
     backgroundHover: "transparent",
-    border: `2px solid ${lightColors.primary}`,
-    borderColorHover: lightColors.primaryBright,
+    border: `1px solid ${lightColors.secondaryBright}`,
+    borderColorHover: lightColors.secondary,
     boxShadow: "none",
     boxShadowActive: "none",
-    color: lightColors.primary,
+    color: lightColors.text,
   },
   [TERTIARY]: {
-    background: lightColors.tertiary,
-    backgroundActive: lightColors.tertiary,
-    backgroundHover: lightColors.tertiary,
+    background: baseColors.secondaryBright,
+    backgroundActive: baseColors.secondary,
+    backgroundHover: baseColors.secondary,
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "none",
     boxShadowActive: "none",
-    color: lightColors.primary,
+    color: lightColors.text,
   },
   [TEXT]: {
     background: "transparent",
     backgroundActive: "transparent",
-    backgroundHover: lightColors.tertiary,
+    backgroundHover: baseColors.secondaryDark,
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "none",
     boxShadowActive: "none",
-    color: lightColors.primary,
+    color: lightColors.text,
   },
   [DANGER]: {
     background: lightColors.failure,

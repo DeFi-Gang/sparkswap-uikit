@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { Login } from "../WalletModal/types";
 import { IconType } from "./icons/types";
 
@@ -53,5 +52,5 @@ export interface NavProps extends HeaderNavProps, FooterLinks {
   login: Login;
   profile?: Profile;
   logout: () => void;
-  children?: JSX.Element|JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 }

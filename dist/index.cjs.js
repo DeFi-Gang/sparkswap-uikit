@@ -172,19 +172,25 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
+var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-size: 150% auto;\n  background-color: ", ";\n  background-image: ", ";\n  border: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: ", ";\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    background-image: ", ";\n\n    border-color: ", ";\n    background-position: right center;\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-size: 150% auto;\n  background-color: ",
+    ";\n  background-image: ", ";\n  border: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: ", ";\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ",
+    ";\n    background-image: ", ";\n\n    border-color: ", ";\n    background-position: right center;\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), function (props) {
+    return props.variant === variants.PRIMARY ? "none" : getButtonVariantProp("background")(props);
+}, function (props) { return (props.variant === variants.PRIMARY ? props.theme.colors.gradients.button : "none"); }, getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "max-content");
 }, function (_a) {
     var size = _a.size;
-    return (size === "sm" ? "32px" : "48px");
+    return (size === "sm" ? "32px" : "42px");
 }, function (_a) {
     var size = _a.size;
     return (size === "sm" ? "0 16px" : "0 24px");
-}, function (_a) {
+}, function (props) { return (props.variant === variants.PRIMARY ? "0.4s" : "background-color 0.2s"); }, function (_a) {
     var isLoading = _a.isLoading;
     return (isLoading ? 0.5 : 1);
-}, getButtonVariantProp("backgroundHover"), getButtonVariantProp("borderColorHover"), function (_a) {
+}, function (props) {
+    return props.variant === variants.PRIMARY ? "none" : getButtonVariantProp("backgroundHover")(props);
+}, function (props) { return (props.variant === variants.PRIMARY ? props.theme.colors.gradients.main : "none"); }, getButtonVariantProp("borderColorHover"), function (_a) {
     var theme = _a.theme;
     return theme.colors.secondary;
 }, getButtonVariantProp("backgroundActive"), getButtonVariantProp("boxShadowActive"), getDisabledStyles, removePointerEvents, styledSystem.space);
@@ -635,9 +641,12 @@ var templateObject_1$6, templateObject_2$2;
 
 var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
-    return theme.colors[variant === variants.SUBTLE ? "input" : "tertiary"];
+    return theme.colors[variant === variants.SUBTLE ? "background" : "tertiary"];
 };
-var StyledButtonMenu = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"])), getBackgroundColor);
+var StyledButtonMenu = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 28px;\n  border: 1px solid ", ";\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 28px;\n  border: 1px solid ", ";\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"])), getBackgroundColor, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.primary;
+});
 var templateObject_1$7;
 
 var ButtonMenu = function (_a) {
@@ -647,7 +656,6 @@ var ButtonMenu = function (_a) {
             isActive: activeIndex === index,
             onClick: onClick ? function () { return onClick(index); } : undefined,
             size: size,
-            variant: variant,
         });
     })));
 };
@@ -828,14 +836,24 @@ var tags = {
     H6: "h6",
 };
 var sizes$1 = {
+    XS: "xs",
+    SM: "sm",
     MD: "md",
     LG: "lg",
     XL: "xl",
     XXL: "xxl",
+    XXXL: "xxxl",
+    XXXXL: "xxxxl",
 };
 
 var _a;
 var style = (_a = {},
+    _a[sizes$1.XS] = {
+        fontSize: "14px",
+    },
+    _a[sizes$1.SM] = {
+        fontSize: "16px",
+    },
     _a[sizes$1.MD] = {
         fontSize: "20px",
     },
@@ -848,8 +866,14 @@ var style = (_a = {},
     _a[sizes$1.XXL] = {
         fontSize: "64px",
     },
+    _a[sizes$1.XXXL] = {
+        fontSize: "100px",
+    },
+    _a[sizes$1.XXXXL] = {
+        fontSize: "130px",
+    },
     _a);
-var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n"])), function (_a) {
+var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n    @import url(\"https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap\");\n\n    ", "\n    font-weight: 700;\n    line-height: 1.1;\n    font-family: \"Orbitron\",serif;\n"], ["\n    @import url(\"https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap\");\n\n    ", "\n    font-weight: 700;\n    line-height: 1.1;\n    font-family: \"Orbitron\",serif;\n"])), function (_a) {
     var size = _a.size;
     return style[size || sizes$1.MD];
 });
@@ -1183,11 +1207,14 @@ var Skeleton = function (_a) {
 };
 var templateObject_1$s, templateObject_2$7, templateObject_3$3, templateObject_4$1, templateObject_5;
 
-var Handle = styled__default['default'].div(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"])), function (_a) {
+var Handle = styled__default['default'].div(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: 28px;\n  left: 6px;\n  position: absolute;\n  top: 6px;\n  transition: left 200ms ease-in;\n  width: 28px;\n  z-index: 1;\n  box-shadow: ", ";\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: 28px;\n  left: 6px;\n  position: absolute;\n  top: 6px;\n  transition: left 200ms ease-in;\n  width: 28px;\n  z-index: 1;\n  box-shadow: ", ";\n"])), function (_a) {
+    var theme = _a.theme, checked = _a.checked;
+    return theme.colors[checked ? "secondaryBright" : "card"];
+}, function (_a) {
     var theme = _a.theme;
-    return theme.toggle.handleBackground;
+    return theme.shadows.focus;
 });
-var Input$1 = styled__default['default'].input(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, Handle, function (_a) {
+var Input$1 = styled__default['default'].input(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 34px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 34px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, Handle, function (_a) {
     var theme = _a.theme;
     return theme.shadows.focus;
 }, Handle, function (_a) {
@@ -1195,8 +1222,8 @@ var Input$1 = styled__default['default'].input(templateObject_2$8 || (templateOb
     return theme.shadows.focus;
 });
 var StyledToggle = styled__default['default'].div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"])), function (_a) {
-    var theme = _a.theme, checked = _a.checked;
-    return theme.colors[checked ? "success" : "input"];
+    var theme = _a.theme;
+    return theme.colors.card;
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
@@ -1206,9 +1233,9 @@ var templateObject_1$t, templateObject_2$8, templateObject_3$4;
 var Toggle = function (_a) {
     var checked = _a.checked, props = __rest(_a, ["checked"]);
     var isChecked = !!checked;
-    return (React__default['default'].createElement(StyledToggle, { checked: isChecked },
+    return (React__default['default'].createElement(StyledToggle, null,
         React__default['default'].createElement(Input$1, __assign({ checked: checked }, props, { type: "checkbox" })),
-        React__default['default'].createElement(Handle, null)));
+        React__default['default'].createElement(Handle, { checked: isChecked })));
 };
 
 var byTextAscending = function (getTextProperty) { return function (objectA, objectB) {
@@ -1557,7 +1584,7 @@ var shadows = {
     active: "0px 0px 0px 1px #1F17F7, 0px 0px 4px 8px rgba(23,25,127, 0.4)",
     success: "0px 0px 0px 1px #98E31A, 0px 0px 4px 8px rgba(102, 191, 60, 0.29)",
     warning: "0px 0px 0px 1px #CD1B3E, 0px 0px 4px 8px rgba(207, 33, 33, 0.2)",
-    focus: "0px 0px 0px 1px #1F17F7, 0px 0px 2px 4px rgba(23,25,127, 0.4)",
+    focus: "0px 0px 0px 1px #EC10BC, 0px 0px 2px 4px rgb(127 23 114 / 40%)",
     inset: "inset 0px 0px 0 1px #1F17F7",
     disabled: "0px 0px 0px 1px #c0bdc4, 0px 0px 4px 8px rgba(199, 211, 193, 0.29)",
 };
@@ -1751,7 +1778,7 @@ var StyledModal = styled__default['default'].div(templateObject_1$u || (template
     return theme.modal.background;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.borderColor;
+    return theme.colors.card;
 }, function (_a) {
     var theme = _a.theme;
     return theme.zIndices.modal;
@@ -1759,7 +1786,7 @@ var StyledModal = styled__default['default'].div(templateObject_1$u || (template
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
-var ModalHeader = styled__default['default'].div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  border-bottom: 1px solid #e9eaeb;\n  align-items: center;\n  padding: 12px 24px;\n"], ["\n  display: flex;\n  align-items: center;\n  border-bottom: 1px solid #e9eaeb;\n  align-items: center;\n  padding: 12px 24px;\n"])));
+var ModalHeader = styled__default['default'].div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  padding: 12px 24px;\n"], ["\n  display: flex;\n  align-items: center;\n  padding: 12px 24px;\n"])));
 var ModalTitle = styled__default['default'](Flex)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
 var Modal = function (_a) {
     var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "24px" : _c;
@@ -1767,10 +1794,10 @@ var Modal = function (_a) {
         React__default['default'].createElement(ModalHeader, null,
             React__default['default'].createElement(ModalTitle, null,
                 onBack && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
-                    React__default['default'].createElement(Icon$5, { color: "primary" }))),
+                    React__default['default'].createElement(Icon$5, { color: "scondarye" }))),
                 React__default['default'].createElement(Heading, null, title)),
             !hideCloseButton && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
-                React__default['default'].createElement(Icon$k, { color: "primary" })))),
+                React__default['default'].createElement(Icon$k, { color: "text" })))),
         React__default['default'].createElement(Flex, { flexDirection: "column", p: bodyPadding }, children)));
 };
 var templateObject_1$u, templateObject_2$9, templateObject_3$5;
@@ -1995,12 +2022,12 @@ var WalletCard = function (_a) {
     var _b;
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb;
     var title = walletConfig.title;
-    return (React__default['default'].createElement(Button, { fullWidth: true, variant: "tertiary", onClick: function () {
+    return (React__default['default'].createElement(Button, { fullWidth: true, variant: "secondary", onClick: function () {
             login(walletConfig.connectorId);
             window.localStorage.setItem(localStorageKey, "1");
             onDismiss();
         }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
-        React__default['default'].createElement(Text, { bold: true, color: "primary", mr: "16px" }, title),
+        React__default['default'].createElement(Text, { bold: true, mr: "16px" }, title),
         walletConfig.icon ? (React__default['default'].createElement(walletConfig.icon, { width: "32px" })) : (React__default['default'].createElement(Image, { src: (_b = walletConfig.fallbackImage) !== null && _b !== void 0 ? _b : "images/wallets/other.png", alt: title, width: 32, height: 32 }))));
 };
 
@@ -2065,24 +2092,104 @@ var useWalletModal = function (login, logout, account) {
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
 
-var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
+var Icon$K = function (props) {
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
+        React__default['default'].createElement("path", { d: "M4 18H20C20.55 18 21 17.55 21 17C21 16.45 20.55 16 20 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H20C20.55 8 21 7.55 21 7C21 6.45 20.55 6 20 6H4C3.45 6 3 6.45 3 7Z" })));
+};
+
+var Icon$L = function (props) {
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
+        React__default['default'].createElement("path", { d: "M4 18H15C15.55 18 16 17.55 16 17C16 16.45 15.55 16 15 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H12C12.55 13 13 12.55 13 12C13 11.45 12.55 11 12 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H15C15.55 8 16 7.55 16 7C16 6.45 15.55 6 15 6H4C3.45 6 3 6.45 3 7ZM20.3 14.88L17.42 12L20.3 9.12C20.69 8.73 20.69 8.1 20.3 7.71C19.91 7.32 19.28 7.32 18.89 7.71L15.3 11.3C14.91 11.69 14.91 12.32 15.3 12.71L18.89 16.3C19.28 16.69 19.91 16.69 20.3 16.3C20.68 15.91 20.69 15.27 20.3 14.88Z" })));
+};
+
+var Icon$M = function (props) {
+    var theme = styled.useTheme();
+    var primaryColor = theme.isDark ? "#3C3742" : "#e9eaeb";
+    var secondaryColor = theme.isDark ? "#666171" : "#bdc2c4";
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 32" }, props),
+        React__default['default'].createElement("path", { d: "M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z", fill: primaryColor }),
+        React__default['default'].createElement("mask", { id: "A", "mask-type": "alpha", maskUnits: "userSpaceOnUse", x: "0", y: "0", width: "32", height: "32" },
+            React__default['default'].createElement("path", { d: "M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z", fill: "#c4c4c4" })),
+        React__default['default'].createElement("g", { mask: "url(#A)" },
+            React__default['default'].createElement("path", { d: "M25.128 16.436c0 3.115-4.133 5.641-9.231 5.641s-9.231-2.526-9.231-5.641V15h18.461v1.436zm2.205 13.806c0-3.815-5.074-6.908-11.333-6.908S4.667 26.426 4.667 30.242V32h22.667v-1.759z", fill: secondaryColor }),
+            React__default['default'].createElement("path", { fillRule: "evenodd", d: "M10.234 5.601C9.942 4.264 10.96 3 12.328 3c1.184 0 2.143.959 2.143 2.143v3.873l1.427-.067c.589 0 1.166.034 1.724.098V5.143c0-1.184.959-2.143 2.143-2.143 1.368 0 2.386 1.264 2.093 2.601l-.931 4.258c2.529 1.006 4.201 2.749 4.201 4.731 0 3.115-4.133 5.641-9.231 5.641s-9.231-2.526-9.231-5.641c0-2.053 1.794-3.849 4.476-4.836l-.908-4.153z", fill: secondaryColor }),
+            React__default['default'].createElement("ellipse", { cx: "12.308", cy: "14.846", rx: "1.026", ry: "1.538", fill: primaryColor }),
+            React__default['default'].createElement("ellipse", { cx: "19.385", cy: "14.846", rx: "1.026", ry: "1.538", fill: primaryColor }))));
+};
+
+var Icon$N = function (props) {
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 33" }, props),
+        React__default['default'].createElement("path", { d: "M28 7.46171C27.9427 8.2173 27.7297 8.94039 27.5741 9.6716C26.6515 14.0589 25.7179 18.4407 24.7734 22.8172C24.6178 23.5484 24.454 24.2796 24.2984 25.0108L24.2738 25.1327C23.979 26.2295 23.16 26.5382 22.2264 25.872C21.2928 25.2058 20.4411 24.5721 19.5567 23.9221C18.6722 23.2722 17.8369 22.6709 16.9934 22.0372C16.8214 21.9072 16.7231 21.9316 16.5757 22.0697L14.0124 24.564C13.8723 24.7131 13.7002 24.8292 13.5089 24.9037C13.3176 24.9782 13.1119 25.0093 12.9069 24.9946C12.612 24.9783 12.4319 24.8565 12.3418 24.5721C11.6457 22.4353 10.9332 20.2986 10.2453 18.1537C10.1798 17.9587 10.0897 17.8531 9.89314 17.7962L4.97128 16.2769C4.74684 16.2136 4.532 16.1207 4.3325 16.0007C3.92303 15.7325 3.89028 15.3426 4.24242 15.0095C4.45303 14.8139 4.70081 14.662 4.97128 14.5626C5.89669 14.197 6.81391 13.8395 7.73932 13.4902L24.1018 7.2261C24.9044 6.92549 25.6988 6.60863 26.5095 6.30802C27.1729 6.06428 27.7543 6.34864 27.9427 6.98236C27.9739 7.1405 27.993 7.30073 28 7.46171ZM12.9396 23.4509L13.0133 23.4347C13.0254 23.4004 13.0336 23.365 13.0379 23.329C13.1443 22.1347 13.259 20.9485 13.3573 19.7542C13.3623 19.6488 13.3888 19.5455 13.4353 19.4505C13.4817 19.3555 13.5471 19.2709 13.6275 19.2017C14.4628 18.4705 15.2818 17.7231 16.1089 16.9837L20.3101 13.2302L23.6105 10.2728C23.7087 10.1835 23.8643 10.086 23.7661 9.92346C23.6678 9.76097 23.5122 9.80972 23.373 9.84222C23.2337 9.87472 22.9225 10.0291 22.7178 10.1591L11.2444 17.3331C11.0479 17.455 10.9905 17.5606 11.0724 17.7962C11.531 19.1368 11.9651 20.4854 12.4155 21.8341C12.5875 22.3785 12.7676 22.9147 12.9396 23.4509Z", fill: "white" })));
+};
+
+var Icon$O = function (props) {
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 33", fill: "none" }, props),
+        React__default['default'].createElement("path", { d: "M7.43666 7.44778C7.57938 7.44778 7.65652 7.44778 7.7356 7.44778C9.25537 7.44778 10.7771 7.44971 12.2968 7.44392C12.4762 7.44392 12.5842 7.49793 12.6864 7.65029C14.102 9.72358 15.5254 11.793 16.9699 13.8952C17.1937 13.6387 17.4077 13.3938 17.618 13.1488C19.1975 11.3108 20.779 9.47478 22.3528 7.63293C22.4704 7.496 22.5861 7.44007 22.7636 7.44585C23.1628 7.45742 23.562 7.44971 24.021 7.44971C23.7356 7.7853 23.4907 8.07652 23.2438 8.36389C21.4425 10.4584 19.6411 12.5548 17.834 14.6435C17.6893 14.8113 17.6662 14.9213 17.8012 15.1161C20.0133 18.3234 22.2178 21.5384 24.4241 24.7515C24.4685 24.8152 24.509 24.8827 24.5688 24.9772C24.4762 24.9849 24.4106 24.9965 24.345 24.9965C22.8253 24.9965 21.3036 24.9907 19.7838 25.0003C19.562 25.0023 19.4328 24.9328 19.3055 24.7477C17.8417 22.5973 16.3682 20.4545 14.8947 18.3099C14.8696 18.2732 14.8388 18.2405 14.7964 18.1903C14.4453 18.5953 14.102 18.9926 13.7587 19.3919C12.2081 21.1951 10.6556 22.9984 9.11072 24.8055C8.98729 24.9483 8.86192 25.0081 8.67484 25.0023C8.28526 24.9888 7.89374 24.9984 7.4328 24.9984C9.68738 22.3755 11.9034 19.7988 14.1329 17.2048C11.9111 13.9666 9.69317 10.7342 7.43666 7.44778ZM22.5167 23.9029C22.4396 23.7892 22.3952 23.7236 22.3489 23.658C20.7829 21.415 19.2168 19.172 17.6507 16.929C15.7452 14.2019 13.8417 11.4767 11.9304 8.7554C11.8687 8.66668 11.7202 8.59146 11.6102 8.58953C10.9854 8.57411 10.3586 8.58182 9.73174 8.58375C9.66617 8.58375 9.60059 8.59339 9.50802 8.60111C9.56395 8.68597 9.60059 8.74576 9.6411 8.80362C11.2129 11.0524 12.7848 13.3031 14.3566 15.5519C16.2563 18.2713 18.156 20.9888 20.0596 23.7043C20.1194 23.7892 20.2293 23.8894 20.3181 23.8914C21.0336 23.9107 21.7472 23.9029 22.5167 23.9029Z", fill: "white" })));
+};
+
+var Icon$P = function (props) {
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 33" }, props),
+        React__default['default'].createElement("path", { d: "M14 19.2213L19.19 16.2213L14 13.2213V19.2213ZM25.56 11.3913C25.69 11.8613 25.78 12.4913 25.84 13.2913C25.91 14.0913 25.94 14.7813 25.94 15.3813L26 16.2213C26 18.4113 25.84 20.0213 25.56 21.0513C25.31 21.9513 24.73 22.5313 23.83 22.7813C23.36 22.9113 22.5 23.0013 21.18 23.0613C19.88 23.1313 18.69 23.1613 17.59 23.1613L16 23.2213C11.81 23.2213 9.2 23.0613 8.17 22.7813C7.27 22.5313 6.69 21.9513 6.44 21.0513C6.31 20.5813 6.22 19.9513 6.16 19.1513C6.09 18.3513 6.06 17.6613 6.06 17.0613L6 16.2213C6 14.0313 6.16 12.4213 6.44 11.3913C6.69 10.4913 7.27 9.91131 8.17 9.66131C8.64 9.53131 9.5 9.44131 10.82 9.38131C12.12 9.31131 13.31 9.28131 14.41 9.28131L16 9.22131C20.19 9.22131 22.8 9.38131 23.83 9.66131C24.73 9.91131 25.31 10.4913 25.56 11.3913Z", fill: "white" })));
+};
+
+var Icon$Q = function (props) {
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 33" }, props),
+        React__default['default'].createElement("g", { clipPath: "url(#clip0_440_1727)" },
+            React__default['default'].createElement("path", { d: "M19.4 7.22131C19.1621 7.6474 18.9501 8.08744 18.7651 8.53903C16.9476 8.25159 15.0961 8.25159 13.2786 8.53903C13.0936 8.08744 12.8816 7.6474 12.6437 7.22131C10.9316 7.51385 9.26723 8.03774 7.69627 8.77862C4.88707 12.8327 3.61307 17.7546 4.1025 22.6626C5.93321 24.0388 7.98791 25.0885 10.176 25.7652C10.6742 25.107 11.1189 24.41 11.5057 23.6808C10.7918 23.4176 10.1057 23.0846 9.45722 22.6865C9.63506 22.5682 9.8033 22.436 9.96035 22.2912C11.8512 23.202 13.923 23.675 16.0218 23.675C18.1206 23.675 20.1925 23.202 22.0833 22.2912C22.2511 22.435 22.4188 22.5667 22.5865 22.6865C21.9345 23.0814 21.2491 23.4181 20.538 23.6928C20.9088 24.4385 21.3416 25.1518 21.8318 25.8251C24.0171 25.1507 26.0683 24.1008 27.8933 22.7225C28.3945 17.8136 27.1194 12.8877 24.2995 8.83851C22.7462 8.08231 21.0983 7.53837 19.4 7.22131ZM12.0447 19.8594C11.4453 19.8164 10.8858 19.5428 10.4837 19.0961C10.0817 18.6493 9.86834 18.0642 9.88847 17.4636C9.8653 16.8621 10.0776 16.2753 10.4803 15.8279C10.8829 15.3805 11.4442 15.1078 12.0447 15.0677C12.6453 15.1078 13.2066 15.3805 13.6092 15.8279C14.0119 16.2753 14.2242 16.8621 14.201 17.4636C14.2242 18.065 14.0119 18.6518 13.6092 19.0992C13.2066 19.5466 12.6453 19.8193 12.0447 19.8594ZM19.999 19.8594C19.3995 19.8164 18.84 19.5428 18.438 19.0961C18.0359 18.6493 17.8226 18.0642 17.8427 17.4636C17.8195 16.8621 18.0318 16.2753 18.4345 15.8279C18.8371 15.3805 19.3984 15.1078 19.999 15.0677C20.6006 15.1048 21.1637 15.3767 21.567 15.8247C21.9702 16.2728 22.1815 16.8613 22.1552 17.4636C22.1815 18.0658 21.9702 18.6543 21.567 19.1024C21.1637 19.5505 20.6006 19.8223 19.999 19.8594Z", fill: "white" })),
+        React__default['default'].createElement("defs", null,
+            React__default['default'].createElement("clipPath", { id: "clip0_440_1727" },
+                React__default['default'].createElement("rect", { width: "24", height: "24", fill: "white", transform: "translate(4 4.22131)" })))));
+};
+
 var Logo = function (_a) {
+    var props = __rest(_a, []);
+    return (React__default['default'].createElement(Svg, __assign({ width: "187", height: "18", viewBox: "0 0 187 18", fill: "none" }, props),
+        React__default['default'].createElement("path", { d: "M3.81222 18C3.22022 18 2.67622 17.856 2.18022 17.568C1.70022 17.28 1.31622 16.888 1.02822 16.392C0.740219 15.896 0.596219 15.352 0.596219 14.76V13.608H3.47622V14.664C3.47622 14.792 3.51622 14.896 3.59622 14.976C3.67622 15.056 3.78022 15.096 3.90822 15.096H14.5162C14.6442 15.096 14.7482 15.056 14.8282 14.976C14.9242 14.896 14.9722 14.792 14.9722 14.664V11.232C14.9722 11.12 14.9242 11.024 14.8282 10.944C14.7482 10.848 14.6442 10.8 14.5162 10.8H3.81222C3.22022 10.8 2.67622 10.656 2.18022 10.368C1.70022 10.08 1.31622 9.696 1.02822 9.216C0.740219 8.72 0.596219 8.176 0.596219 7.584V3.96C0.596219 3.368 0.740219 2.824 1.02822 2.328C1.31622 1.832 1.70022 1.44 2.18022 1.152C2.67622 0.863999 3.22022 0.719999 3.81222 0.719999H14.6362C15.2282 0.719999 15.7642 0.863999 16.2442 1.152C16.7402 1.44 17.1322 1.832 17.4202 2.328C17.7242 2.824 17.8762 3.368 17.8762 3.96V5.112H14.9722V4.056C14.9722 3.928 14.9242 3.824 14.8282 3.744C14.7482 3.664 14.6442 3.624 14.5162 3.624H3.90822C3.78022 3.624 3.67622 3.664 3.59622 3.744C3.51622 3.824 3.47622 3.928 3.47622 4.056V7.488C3.47622 7.6 3.51622 7.704 3.59622 7.8C3.67622 7.88 3.78022 7.92 3.90822 7.92H14.6362C15.2282 7.92 15.7642 8.064 16.2442 8.352C16.7402 8.64 17.1322 9.032 17.4202 9.528C17.7242 10.008 17.8762 10.544 17.8762 11.136V14.76C17.8762 15.352 17.7242 15.896 17.4202 16.392C17.1322 16.888 16.7402 17.28 16.2442 17.568C15.7642 17.856 15.2282 18 14.6362 18H3.81222ZM20.9529 18V0.743999H34.9929C35.5849 0.743999 36.1209 0.895999 36.6009 1.2C37.0969 1.488 37.4889 1.88 37.7769 2.376C38.0809 2.856 38.2329 3.392 38.2329 3.984V8.736C38.2329 9.312 38.0809 9.848 37.7769 10.344C37.4889 10.84 37.0969 11.232 36.6009 11.52C36.1209 11.808 35.5849 11.952 34.9929 11.952L23.8329 11.976V18H20.9529ZM24.2649 9.048H34.8969C35.0089 9.048 35.1049 9.008 35.1849 8.928C35.2809 8.848 35.3289 8.744 35.3289 8.616V4.056C35.3289 3.944 35.2809 3.848 35.1849 3.768C35.1049 3.672 35.0089 3.624 34.8969 3.624H24.2649C24.1529 3.624 24.0489 3.672 23.9529 3.768C23.8729 3.848 23.8329 3.944 23.8329 4.056V8.616C23.8329 8.744 23.8729 8.848 23.9529 8.928C24.0489 9.008 24.1529 9.048 24.2649 9.048ZM40.5825 18V3.96C40.5825 3.368 40.7265 2.824 41.0145 2.328C41.3025 1.832 41.6945 1.44 42.1905 1.152C42.6865 0.863999 43.2305 0.719999 43.8225 0.719999H54.6225C55.2145 0.719999 55.7505 0.863999 56.2305 1.152C56.7265 1.44 57.1185 1.832 57.4065 2.328C57.7105 2.824 57.8625 3.368 57.8625 3.96V18H54.9585V12.072H43.4625V18H40.5825ZM43.4625 9.192H54.9585V4.056C54.9585 3.928 54.9105 3.824 54.8145 3.744C54.7345 3.664 54.6385 3.624 54.5265 3.624H43.8945C43.7825 3.624 43.6785 3.664 43.5825 3.744C43.5025 3.824 43.4625 3.928 43.4625 4.056V9.192ZM75.045 18L69.741 11.664H73.509L78.285 17.328V18H75.045ZM61.077 18V0.743999H75.117C75.709 0.743999 76.245 0.895999 76.725 1.2C77.221 1.488 77.613 1.88 77.901 2.376C78.205 2.856 78.357 3.392 78.357 3.984V8.736C78.357 9.312 78.205 9.848 77.901 10.344C77.613 10.84 77.221 11.232 76.725 11.52C76.245 11.808 75.709 11.952 75.117 11.952L63.957 11.976V18H61.077ZM64.389 9.048H75.021C75.133 9.048 75.229 9.008 75.309 8.928C75.405 8.848 75.453 8.744 75.453 8.616V4.056C75.453 3.944 75.405 3.848 75.309 3.768C75.229 3.672 75.133 3.624 75.021 3.624H64.389C64.277 3.624 64.173 3.672 64.077 3.768C63.997 3.848 63.957 3.944 63.957 4.056V8.616C63.957 8.744 63.997 8.848 64.077 8.928C64.173 9.008 64.277 9.048 64.389 9.048ZM81.3857 18V0.719999H84.2897V7.92H88.7057L94.7297 0.719999H97.9697V1.416L91.2977 9.36L97.9697 17.304V18H94.7297L88.7057 10.8H84.2897V18H81.3857ZM104.111 18C103.519 18 102.975 17.856 102.479 17.568C101.999 17.28 101.615 16.888 101.327 16.392C101.039 15.896 100.895 15.352 100.895 14.76V13.608H103.775V14.664C103.775 14.792 103.815 14.896 103.895 14.976C103.975 15.056 104.079 15.096 104.207 15.096H114.815C114.943 15.096 115.047 15.056 115.127 14.976C115.223 14.896 115.271 14.792 115.271 14.664V11.232C115.271 11.12 115.223 11.024 115.127 10.944C115.047 10.848 114.943 10.8 114.815 10.8H104.111C103.519 10.8 102.975 10.656 102.479 10.368C101.999 10.08 101.615 9.696 101.327 9.216C101.039 8.72 100.895 8.176 100.895 7.584V3.96C100.895 3.368 101.039 2.824 101.327 2.328C101.615 1.832 101.999 1.44 102.479 1.152C102.975 0.863999 103.519 0.719999 104.111 0.719999H114.935C115.527 0.719999 116.063 0.863999 116.543 1.152C117.039 1.44 117.431 1.832 117.719 2.328C118.023 2.824 118.175 3.368 118.175 3.96V5.112H115.271V4.056C115.271 3.928 115.223 3.824 115.127 3.744C115.047 3.664 114.943 3.624 114.815 3.624H104.207C104.079 3.624 103.975 3.664 103.895 3.744C103.815 3.824 103.775 3.928 103.775 4.056V7.488C103.775 7.6 103.815 7.704 103.895 7.8C103.975 7.88 104.079 7.92 104.207 7.92H114.935C115.527 7.92 116.063 8.064 116.543 8.352C117.039 8.64 117.431 9.032 117.719 9.528C118.023 10.008 118.175 10.544 118.175 11.136V14.76C118.175 15.352 118.023 15.896 117.719 16.392C117.431 16.888 117.039 17.28 116.543 17.568C116.063 17.856 115.527 18 114.935 18H104.111ZM126.332 18L120.044 0.719999H123.116L127.484 12.696L131.852 0.719999H134.78L139.172 12.696L143.54 0.719999H146.612L140.324 18H137.996L133.316 5.16L128.636 18H126.332ZM148.428 18V3.96C148.428 3.368 148.572 2.824 148.86 2.328C149.148 1.832 149.54 1.44 150.036 1.152C150.532 0.863999 151.076 0.719999 151.668 0.719999H162.468C163.06 0.719999 163.596 0.863999 164.076 1.152C164.572 1.44 164.964 1.832 165.252 2.328C165.556 2.824 165.708 3.368 165.708 3.96V18H162.804V12.072H151.308V18H148.428ZM151.308 9.192H162.804V4.056C162.804 3.928 162.756 3.824 162.66 3.744C162.58 3.664 162.484 3.624 162.372 3.624H151.74C151.628 3.624 151.524 3.664 151.428 3.744C151.348 3.824 151.308 3.928 151.308 4.056V9.192ZM168.922 18V0.743999H182.962C183.554 0.743999 184.09 0.895999 184.57 1.2C185.066 1.488 185.458 1.88 185.746 2.376C186.05 2.856 186.202 3.392 186.202 3.984V8.736C186.202 9.312 186.05 9.848 185.746 10.344C185.458 10.84 185.066 11.232 184.57 11.52C184.09 11.808 183.554 11.952 182.962 11.952L171.802 11.976V18H168.922ZM172.234 9.048H182.866C182.978 9.048 183.074 9.008 183.154 8.928C183.25 8.848 183.298 8.744 183.298 8.616V4.056C183.298 3.944 183.25 3.848 183.154 3.768C183.074 3.672 182.978 3.624 182.866 3.624H172.234C172.122 3.624 172.018 3.672 171.922 3.768C171.842 3.848 171.802 3.944 171.802 4.056V8.616C171.802 8.744 171.842 8.848 171.922 8.928C172.018 9.008 172.122 9.048 172.234 9.048Z", fill: "#E9E9E9" })));
+};
+
+var IconModule = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    HamburgerIcon: Icon$K,
+    HamburgerCloseIcon: Icon$L,
+    NoProfileAvatar: Icon$M,
+    TelegramIcon: Icon$N,
+    TwitterIcon: Icon$O,
+    YoutubeIcon: Icon$P,
+    DiscordIcon: Icon$Q,
+    LogoIcon: Logo
+});
+
+var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
+var StyledWrapLogo = styled__default['default'].div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n    display: flex;\n    flex-direction: ", ";\n    gap: 8px;\n    align-items: center;\n    ", " {\n      flex-direction: row;\n    }\n"], ["\n    display: flex;\n    flex-direction: ", ";\n    gap: 8px;\n    align-items: center;\n    ", " {\n      flex-direction: row;\n    }\n"])), function (_a) {
+    var isFooter = _a.isFooter;
+    return (isFooter ? 'column' : 'row');
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var Logo$1 = function (_a) {
     var href = _a.href, isFooter = _a.isFooter;
     var isAbsoluteUrl = href.startsWith("http");
-    var innerLogo = React__default['default'].createElement(Icon$q, { width: isFooter ? 171 : 92 });
-    return (React__default['default'].createElement(React__default['default'].Fragment, null, isAbsoluteUrl ? (React__default['default'].createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink$1, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
+    // const innerLogo = <LogoIcon width={isFooter ? 171 : 92} />;
+    var innerLogo = (React__default['default'].createElement(StyledWrapLogo, { isFooter: isFooter },
+        React__default['default'].createElement(Icon$q, { width: isFooter ? 82 : 35 }),
+        React__default['default'].createElement(Logo, null)));
+    return (React__default['default'].createElement(React__default['default'].Fragment, null, isAbsoluteUrl ? (React__default['default'].createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Sparkswap home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink$1, { to: href, "aria-label": "Sparkswap home page" }, innerLogo))));
 };
-var templateObject_1$B;
+Logo$1.defaultProps = {
+    isFooter: false,
+};
+var templateObject_1$B, templateObject_2$b;
 
 var UserBlock = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout;
+    var account = _a.account, login = _a.login, logout = _a.logout, inHeader = _a.inHeader, fullWidth = _a.fullWidth;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React__default['default'].createElement("div", null, account ? (React__default['default'].createElement(Button, { size: "sm", variant: "primary", onClick: function () {
+    return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(Button, { size: inHeader ? "sm" : 'md', fullWidth: fullWidth, variant: "primary", onClick: function () {
             onPresentAccountModal();
-        } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", onClick: function () {
+        } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: inHeader ? "sm" : 'md', fullWidth: fullWidth, onClick: function () {
             onPresentConnectModal();
-        } }, "Connect"))));
+        } }, inHeader ? "Connect" : 'Connect wallet'))));
 };
 
 var links = [
@@ -2201,12 +2308,12 @@ var links = [
 ];
 var MENU_HEIGHT = 80;
 var FOOTER_HEIGHT = 138;
-var FOOTER_HEIGHT_MOBILE = 243;
+var FOOTER_HEIGHT_MOBILE = 281;
 var MENU_ENTRY_HEIGHT = 22;
 var SIDEBAR_WIDTH_FULL = 220;
 
 var rainbowAnimation = styled.keyframes(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
-var LinkLabel = styled__default['default'].div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  color: ", ";\n  transition: color 0.4s;\n"], ["\n  color: ", ";\n  transition: color 0.4s;\n"])), function (_a) {
+var LinkLabel = styled__default['default'].div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  color: ", ";\n  transition: color 0.4s;\n"], ["\n  color: ", ";\n  transition: color 0.4s;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
 });
@@ -2221,7 +2328,7 @@ var MobileMenuEntry = styled__default['default'].div(templateObject_3$6 || (temp
     return theme.colors.textSubtle;
 }, function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
-    return (isActive ? "inset 4px 0px 0px " + theme.colors.primary : "none");
+    return (isActive ? "inset 4px 0px 0px " + theme.colors.secondaryBright : "none");
 }, function (_a) {
     var theme = _a.theme, isActive = _a.isActive;
     return (isActive ? theme.colors.primaryBright : theme.colors.primaryBright);
@@ -2237,7 +2344,7 @@ MobileMenuEntry.defaultProps = {
     isActive: false,
     role: "button",
 };
-var templateObject_1$C, templateObject_2$b, templateObject_3$6;
+var templateObject_1$C, templateObject_2$c, templateObject_3$6;
 
 var MenuLink = function (_a) {
     var href = _a.href, otherProps = __rest(_a, ["href"]);
@@ -2249,7 +2356,7 @@ var MenuLink = function (_a) {
 };
 
 var Container$2 = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"])));
-var AccordionContent = styled__default['default'].div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-out;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: ", ";\n"], ["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-out;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: ", ";\n"])), function (_a) {
+var AccordionContent = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-out;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: ", ";\n"], ["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-out;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: ", ";\n"])), function (_a) {
     var isOpen = _a.isOpen, maxHeight = _a.maxHeight;
     return (isOpen ? maxHeight + "px" : 0);
 }, function (_a) {
@@ -2268,7 +2375,7 @@ var MobileAccordion = function (_a) {
             isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null)),
         React__default['default'].createElement(AccordionContent, { isOpen: isOpen, maxHeight: React__default['default'].Children.count(children) * (MENU_ENTRY_HEIGHT + 8) + 16 }, children)));
 };
-var templateObject_1$D, templateObject_2$c;
+var templateObject_1$D, templateObject_2$d;
 
 var Container$3 = styled__default['default'].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  gap: 8px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  gap: 8px;\n"])));
 var MobileMenuBody = function (_a) {
@@ -2286,68 +2393,8 @@ var MobileMenuBody = function (_a) {
 };
 var templateObject_1$E;
 
-var Icon$K = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M4 18H20C20.55 18 21 17.55 21 17C21 16.45 20.55 16 20 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H20C20.55 8 21 7.55 21 7C21 6.45 20.55 6 20 6H4C3.45 6 3 6.45 3 7Z" })));
-};
-
-var Icon$L = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M4 18H15C15.55 18 16 17.55 16 17C16 16.45 15.55 16 15 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H12C12.55 13 13 12.55 13 12C13 11.45 12.55 11 12 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H15C15.55 8 16 7.55 16 7C16 6.45 15.55 6 15 6H4C3.45 6 3 6.45 3 7ZM20.3 14.88L17.42 12L20.3 9.12C20.69 8.73 20.69 8.1 20.3 7.71C19.91 7.32 19.28 7.32 18.89 7.71L15.3 11.3C14.91 11.69 14.91 12.32 15.3 12.71L18.89 16.3C19.28 16.69 19.91 16.69 20.3 16.3C20.68 15.91 20.69 15.27 20.3 14.88Z" })));
-};
-
-var Icon$M = function (props) {
-    var theme = styled.useTheme();
-    var primaryColor = theme.isDark ? "#3C3742" : "#e9eaeb";
-    var secondaryColor = theme.isDark ? "#666171" : "#bdc2c4";
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 32" }, props),
-        React__default['default'].createElement("path", { d: "M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z", fill: primaryColor }),
-        React__default['default'].createElement("mask", { id: "A", "mask-type": "alpha", maskUnits: "userSpaceOnUse", x: "0", y: "0", width: "32", height: "32" },
-            React__default['default'].createElement("path", { d: "M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z", fill: "#c4c4c4" })),
-        React__default['default'].createElement("g", { mask: "url(#A)" },
-            React__default['default'].createElement("path", { d: "M25.128 16.436c0 3.115-4.133 5.641-9.231 5.641s-9.231-2.526-9.231-5.641V15h18.461v1.436zm2.205 13.806c0-3.815-5.074-6.908-11.333-6.908S4.667 26.426 4.667 30.242V32h22.667v-1.759z", fill: secondaryColor }),
-            React__default['default'].createElement("path", { fillRule: "evenodd", d: "M10.234 5.601C9.942 4.264 10.96 3 12.328 3c1.184 0 2.143.959 2.143 2.143v3.873l1.427-.067c.589 0 1.166.034 1.724.098V5.143c0-1.184.959-2.143 2.143-2.143 1.368 0 2.386 1.264 2.093 2.601l-.931 4.258c2.529 1.006 4.201 2.749 4.201 4.731 0 3.115-4.133 5.641-9.231 5.641s-9.231-2.526-9.231-5.641c0-2.053 1.794-3.849 4.476-4.836l-.908-4.153z", fill: secondaryColor }),
-            React__default['default'].createElement("ellipse", { cx: "12.308", cy: "14.846", rx: "1.026", ry: "1.538", fill: primaryColor }),
-            React__default['default'].createElement("ellipse", { cx: "19.385", cy: "14.846", rx: "1.026", ry: "1.538", fill: primaryColor }))));
-};
-
-var Icon$N = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 33" }, props),
-        React__default['default'].createElement("path", { d: "M28 7.46171C27.9427 8.2173 27.7297 8.94039 27.5741 9.6716C26.6515 14.0589 25.7179 18.4407 24.7734 22.8172C24.6178 23.5484 24.454 24.2796 24.2984 25.0108L24.2738 25.1327C23.979 26.2295 23.16 26.5382 22.2264 25.872C21.2928 25.2058 20.4411 24.5721 19.5567 23.9221C18.6722 23.2722 17.8369 22.6709 16.9934 22.0372C16.8214 21.9072 16.7231 21.9316 16.5757 22.0697L14.0124 24.564C13.8723 24.7131 13.7002 24.8292 13.5089 24.9037C13.3176 24.9782 13.1119 25.0093 12.9069 24.9946C12.612 24.9783 12.4319 24.8565 12.3418 24.5721C11.6457 22.4353 10.9332 20.2986 10.2453 18.1537C10.1798 17.9587 10.0897 17.8531 9.89314 17.7962L4.97128 16.2769C4.74684 16.2136 4.532 16.1207 4.3325 16.0007C3.92303 15.7325 3.89028 15.3426 4.24242 15.0095C4.45303 14.8139 4.70081 14.662 4.97128 14.5626C5.89669 14.197 6.81391 13.8395 7.73932 13.4902L24.1018 7.2261C24.9044 6.92549 25.6988 6.60863 26.5095 6.30802C27.1729 6.06428 27.7543 6.34864 27.9427 6.98236C27.9739 7.1405 27.993 7.30073 28 7.46171ZM12.9396 23.4509L13.0133 23.4347C13.0254 23.4004 13.0336 23.365 13.0379 23.329C13.1443 22.1347 13.259 20.9485 13.3573 19.7542C13.3623 19.6488 13.3888 19.5455 13.4353 19.4505C13.4817 19.3555 13.5471 19.2709 13.6275 19.2017C14.4628 18.4705 15.2818 17.7231 16.1089 16.9837L20.3101 13.2302L23.6105 10.2728C23.7087 10.1835 23.8643 10.086 23.7661 9.92346C23.6678 9.76097 23.5122 9.80972 23.373 9.84222C23.2337 9.87472 22.9225 10.0291 22.7178 10.1591L11.2444 17.3331C11.0479 17.455 10.9905 17.5606 11.0724 17.7962C11.531 19.1368 11.9651 20.4854 12.4155 21.8341C12.5875 22.3785 12.7676 22.9147 12.9396 23.4509Z", fill: "white" })));
-};
-
-var Icon$O = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 33", fill: "none" }, props),
-        React__default['default'].createElement("path", { d: "M7.43666 7.44778C7.57938 7.44778 7.65652 7.44778 7.7356 7.44778C9.25537 7.44778 10.7771 7.44971 12.2968 7.44392C12.4762 7.44392 12.5842 7.49793 12.6864 7.65029C14.102 9.72358 15.5254 11.793 16.9699 13.8952C17.1937 13.6387 17.4077 13.3938 17.618 13.1488C19.1975 11.3108 20.779 9.47478 22.3528 7.63293C22.4704 7.496 22.5861 7.44007 22.7636 7.44585C23.1628 7.45742 23.562 7.44971 24.021 7.44971C23.7356 7.7853 23.4907 8.07652 23.2438 8.36389C21.4425 10.4584 19.6411 12.5548 17.834 14.6435C17.6893 14.8113 17.6662 14.9213 17.8012 15.1161C20.0133 18.3234 22.2178 21.5384 24.4241 24.7515C24.4685 24.8152 24.509 24.8827 24.5688 24.9772C24.4762 24.9849 24.4106 24.9965 24.345 24.9965C22.8253 24.9965 21.3036 24.9907 19.7838 25.0003C19.562 25.0023 19.4328 24.9328 19.3055 24.7477C17.8417 22.5973 16.3682 20.4545 14.8947 18.3099C14.8696 18.2732 14.8388 18.2405 14.7964 18.1903C14.4453 18.5953 14.102 18.9926 13.7587 19.3919C12.2081 21.1951 10.6556 22.9984 9.11072 24.8055C8.98729 24.9483 8.86192 25.0081 8.67484 25.0023C8.28526 24.9888 7.89374 24.9984 7.4328 24.9984C9.68738 22.3755 11.9034 19.7988 14.1329 17.2048C11.9111 13.9666 9.69317 10.7342 7.43666 7.44778ZM22.5167 23.9029C22.4396 23.7892 22.3952 23.7236 22.3489 23.658C20.7829 21.415 19.2168 19.172 17.6507 16.929C15.7452 14.2019 13.8417 11.4767 11.9304 8.7554C11.8687 8.66668 11.7202 8.59146 11.6102 8.58953C10.9854 8.57411 10.3586 8.58182 9.73174 8.58375C9.66617 8.58375 9.60059 8.59339 9.50802 8.60111C9.56395 8.68597 9.60059 8.74576 9.6411 8.80362C11.2129 11.0524 12.7848 13.3031 14.3566 15.5519C16.2563 18.2713 18.156 20.9888 20.0596 23.7043C20.1194 23.7892 20.2293 23.8894 20.3181 23.8914C21.0336 23.9107 21.7472 23.9029 22.5167 23.9029Z", fill: "white" })));
-};
-
-var Icon$P = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 33" }, props),
-        React__default['default'].createElement("path", { d: "M14 19.2213L19.19 16.2213L14 13.2213V19.2213ZM25.56 11.3913C25.69 11.8613 25.78 12.4913 25.84 13.2913C25.91 14.0913 25.94 14.7813 25.94 15.3813L26 16.2213C26 18.4113 25.84 20.0213 25.56 21.0513C25.31 21.9513 24.73 22.5313 23.83 22.7813C23.36 22.9113 22.5 23.0013 21.18 23.0613C19.88 23.1313 18.69 23.1613 17.59 23.1613L16 23.2213C11.81 23.2213 9.2 23.0613 8.17 22.7813C7.27 22.5313 6.69 21.9513 6.44 21.0513C6.31 20.5813 6.22 19.9513 6.16 19.1513C6.09 18.3513 6.06 17.6613 6.06 17.0613L6 16.2213C6 14.0313 6.16 12.4213 6.44 11.3913C6.69 10.4913 7.27 9.91131 8.17 9.66131C8.64 9.53131 9.5 9.44131 10.82 9.38131C12.12 9.31131 13.31 9.28131 14.41 9.28131L16 9.22131C20.19 9.22131 22.8 9.38131 23.83 9.66131C24.73 9.91131 25.31 10.4913 25.56 11.3913Z", fill: "white" })));
-};
-
-var Icon$Q = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 33" }, props),
-        React__default['default'].createElement("g", { clipPath: "url(#clip0_440_1727)" },
-            React__default['default'].createElement("path", { d: "M19.4 7.22131C19.1621 7.6474 18.9501 8.08744 18.7651 8.53903C16.9476 8.25159 15.0961 8.25159 13.2786 8.53903C13.0936 8.08744 12.8816 7.6474 12.6437 7.22131C10.9316 7.51385 9.26723 8.03774 7.69627 8.77862C4.88707 12.8327 3.61307 17.7546 4.1025 22.6626C5.93321 24.0388 7.98791 25.0885 10.176 25.7652C10.6742 25.107 11.1189 24.41 11.5057 23.6808C10.7918 23.4176 10.1057 23.0846 9.45722 22.6865C9.63506 22.5682 9.8033 22.436 9.96035 22.2912C11.8512 23.202 13.923 23.675 16.0218 23.675C18.1206 23.675 20.1925 23.202 22.0833 22.2912C22.2511 22.435 22.4188 22.5667 22.5865 22.6865C21.9345 23.0814 21.2491 23.4181 20.538 23.6928C20.9088 24.4385 21.3416 25.1518 21.8318 25.8251C24.0171 25.1507 26.0683 24.1008 27.8933 22.7225C28.3945 17.8136 27.1194 12.8877 24.2995 8.83851C22.7462 8.08231 21.0983 7.53837 19.4 7.22131ZM12.0447 19.8594C11.4453 19.8164 10.8858 19.5428 10.4837 19.0961C10.0817 18.6493 9.86834 18.0642 9.88847 17.4636C9.8653 16.8621 10.0776 16.2753 10.4803 15.8279C10.8829 15.3805 11.4442 15.1078 12.0447 15.0677C12.6453 15.1078 13.2066 15.3805 13.6092 15.8279C14.0119 16.2753 14.2242 16.8621 14.201 17.4636C14.2242 18.065 14.0119 18.6518 13.6092 19.0992C13.2066 19.5466 12.6453 19.8193 12.0447 19.8594ZM19.999 19.8594C19.3995 19.8164 18.84 19.5428 18.438 19.0961C18.0359 18.6493 17.8226 18.0642 17.8427 17.4636C17.8195 16.8621 18.0318 16.2753 18.4345 15.8279C18.8371 15.3805 19.3984 15.1078 19.999 15.0677C20.6006 15.1048 21.1637 15.3767 21.567 15.8247C21.9702 16.2728 22.1815 16.8613 22.1552 17.4636C22.1815 18.0658 21.9702 18.6543 21.567 19.1024C21.1637 19.5505 20.6006 19.8223 19.999 19.8594Z", fill: "white" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("clipPath", { id: "clip0_440_1727" },
-                React__default['default'].createElement("rect", { width: "24", height: "24", fill: "white", transform: "translate(4 4.22131)" })))));
-};
-
-var IconModule = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    HamburgerIcon: Icon$K,
-    HamburgerCloseIcon: Icon$L,
-    NoProfileAvatar: Icon$M,
-    TelegramIcon: Icon$N,
-    TwitterIcon: Icon$O,
-    YoutubeIcon: Icon$P,
-    DiscordIcon: Icon$Q
-});
-
 var StyledAvatar = styled__default['default'].div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  margin-left: 8px;\n  position: relative;\n\n  img {\n    border-radius: 50%;\n  }\n"], ["\n  margin-left: 8px;\n  position: relative;\n\n  img {\n    border-radius: 50%;\n  }\n"])));
-var Pip = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  pointer-events: none;\n  height: 8px;\n  position: absolute;\n  right: 0;\n  top: 0;\n  width: 8px;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  pointer-events: none;\n  height: 8px;\n  position: absolute;\n  right: 0;\n  top: 0;\n  width: 8px;\n"])), function (_a) {
+var Pip = styled__default['default'].div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  pointer-events: none;\n  height: 8px;\n  position: absolute;\n  right: 0;\n  top: 0;\n  width: 8px;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  pointer-events: none;\n  height: 8px;\n  position: absolute;\n  right: 0;\n  top: 0;\n  width: 8px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.failure;
 });
@@ -2367,7 +2414,7 @@ var Avatar = function (_a) {
         React__default['default'].createElement(reactRouterDom.Link, { to: link, "aria-label": ariaLabel }, icon),
         showPip && React__default['default'].createElement(Pip, null)));
 };
-var templateObject_1$F, templateObject_2$d;
+var templateObject_1$F, templateObject_2$e;
 
 var StyledPanel = styled__default['default'].div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: fixed;\n  top: ", "px;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", ";\n  height: calc(100vh - ", "px);\n  transition: padding-top 0.2s, width 0.2s;\n  z-index: 21;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n  padding: ", ";\n"], ["\n  position: fixed;\n  top: ", "px;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", ";\n  height: calc(100vh - ", "px);\n  transition: padding-top 0.2s, width 0.2s;\n  z-index: 21;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n  padding: ", ";\n"])), MENU_HEIGHT, function (_a) {
     var theme = _a.theme;
@@ -2382,32 +2429,32 @@ var StyledPanel = styled__default['default'].div(templateObject_1$G || (template
     var showMenu = _a.showMenu;
     return (showMenu ? "16px 0" : 0);
 });
-var StyledFlex = styled__default['default'].div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  margin: 0 auto;\n"], ["\n  display: flex;\n  flex-direction: row;\n  margin: 0 auto;\n"])));
+var StyledFlex = styled__default['default'].div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  margin: 0 auto;\n"], ["\n  display: flex;\n  flex-direction: row;\n  margin: 0 auto;\n"])));
 var MobileMenuSideBar = function (props) {
     var showMenu = props.showMenu, account = props.account, login = props.login, logout = props.logout, profile = props.profile;
     return (React__default['default'].createElement(StyledPanel, { showMenu: showMenu },
         React__default['default'].createElement(MobileMenuBody, __assign({}, props)),
         React__default['default'].createElement(StyledFlex, null,
-            React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
+            React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout, inHeader: true }),
             profile && React__default['default'].createElement(Avatar, { profile: profile }))));
 };
-var templateObject_1$G, templateObject_2$e;
+var templateObject_1$G, templateObject_2$f;
 
 var NavHeaderEntry = styled__default['default'].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  cursor: pointer;\n  border: 0;\n  padding-left: ", ";\n  font-size: 16px;\n  font-weight: 600;\n  height: ", "px;\n  gap: 4px;\n  display: flex;\n  align-items: center;\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    font-size: 16px;\n    font-weight: 600;\n  }\n\n  svg {\n    width: 10px;\n    fill: none;\n    svg {\n      path {\n        stroke: ", ";\n      }\n    }\n  }\n\n  &:hover {\n    color: ", ";\n    svg {\n      path {\n        stroke: ", ";\n      }\n    }\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  border: 0;\n  padding-left: ", ";\n  font-size: 16px;\n  font-weight: 600;\n  height: ", "px;\n  gap: 4px;\n  display: flex;\n  align-items: center;\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    font-size: 16px;\n    font-weight: 600;\n  }\n\n  svg {\n    width: 10px;\n    fill: none;\n    svg {\n      path {\n        stroke: ", ";\n      }\n    }\n  }\n\n  &:hover {\n    color: ", ";\n    svg {\n      path {\n        stroke: ", ";\n      }\n    }\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
     var isInAccordion = _a.isInAccordion;
     return (isInAccordion ? "16px" : 0);
 }, MENU_ENTRY_HEIGHT, function (_a) {
     var theme = _a.theme, isActive = _a.isActive;
-    return (isActive ? theme.colors.primary : theme.colors.tertiary);
+    return (isActive ? theme.colors.secondaryBright : theme.colors.tertiary);
 }, function (_a) {
     var theme = _a.theme, isActive = _a.isActive;
-    return (isActive ? theme.colors.primaryBright : theme.colors.primaryBright);
+    return (isActive ? theme.colors.primaryBright : theme.colors.tertiary);
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.primaryBright;
+    return theme.colors.secondary;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.primaryBright;
+    return theme.colors.secondary;
 });
 NavHeaderEntry.defaultProps = {
     secondary: false,
@@ -2426,7 +2473,7 @@ var NavLinkHeader = function (_a) {
 };
 
 var Container$4 = styled__default['default'].div(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n  position: relative;\n  height: ", "px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n  position: relative;\n  height: ", "px;\n"])), MENU_ENTRY_HEIGHT);
-var AccordionContent$1 = styled__default['default'].div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-in;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  position: absolute;\n  z-index: 22;\n  border-radius: 4px;\n  min-width: 220px;\n  top: 50px;\n  overflow: hidden;\n  background-color: ", ";\n  padding: ", ";\n"], ["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-in;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  position: absolute;\n  z-index: 22;\n  border-radius: 4px;\n  min-width: 220px;\n  top: 50px;\n  overflow: hidden;\n  background-color: ", ";\n  padding: ", ";\n"])), function (_a) {
+var AccordionContent$1 = styled__default['default'].div(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-in;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  position: absolute;\n  z-index: 22;\n  border-radius: 4px;\n  min-width: 220px;\n  top: 50px;\n  overflow: hidden;\n  background-color: ", ";\n  padding: ", ";\n"], ["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-in;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  position: absolute;\n  z-index: 22;\n  border-radius: 4px;\n  min-width: 220px;\n  top: 50px;\n  overflow: hidden;\n  background-color: ", ";\n  padding: ", ";\n"])), function (_a) {
     var isOpen = _a.isOpen, maxHeight = _a.maxHeight;
     return (isOpen ? maxHeight + "px" : 0);
 }, function (_a) {
@@ -2445,7 +2492,7 @@ var HeaderNavAccordion = function (_a) {
         React__default['default'].createElement(AccordionContent$1, { isOpen: isOpen, maxHeight: (React__default['default'].Children.count(children) + 8) * MENU_ENTRY_HEIGHT + 32 }, children)));
 };
 var HeaderNavAccordion$1 = React.memo(HeaderNavAccordion);
-var templateObject_1$I, templateObject_2$f;
+var templateObject_1$I, templateObject_2$g;
 
 var Container$5 = styled__default['default'].div(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  gap: 16px;\n"], ["\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  gap: 16px;\n"])));
 var HeaderNav = function (_a) {
@@ -2507,7 +2554,7 @@ var StyledFooter = styled__default['default'].footer(templateObject_1$L || (temp
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, FOOTER_HEIGHT);
-var Container$6 = styled__default['default'].div(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 32px;\n  padding: 0 15px;\n  width: 100%;\n  max-width: 1920px;\n  margin: 0 auto;\n  height: 100%;\n  ", " {\n    padding: 0 30px;\n    flex-direction: row;\n    justify-content: space-between;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 32px;\n  padding: 0 15px;\n  width: 100%;\n  max-width: 1920px;\n  margin: 0 auto;\n  height: 100%;\n  ", " {\n    padding: 0 30px;\n    flex-direction: row;\n    justify-content: space-between;\n  }\n"])), function (_a) {
+var Container$6 = styled__default['default'].div(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 32px;\n  padding: 0 15px;\n  width: 100%;\n  max-width: 1920px;\n  margin: 0 auto;\n  height: 100%;\n  ", " {\n    padding: 0 30px;\n    flex-direction: row;\n    justify-content: space-between;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 32px;\n  padding: 0 15px;\n  width: 100%;\n  max-width: 1920px;\n  margin: 0 auto;\n  height: 100%;\n  ", " {\n    padding: 0 30px;\n    flex-direction: row;\n    justify-content: space-between;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -2526,7 +2573,7 @@ var Footer = function (_a) {
     var currentYear = new Date().getFullYear();
     return (React__default['default'].createElement(StyledFooter, null,
         React__default['default'].createElement(Container$6, null,
-            React__default['default'].createElement(Logo, { href: logoLink, isFooter: true }),
+            React__default['default'].createElement(Logo$1, { href: logoLink, isFooter: true }),
             React__default['default'].createElement(RightBlock, null,
                 React__default['default'].createElement(SocialLinksWrap, null, socialLinks.map(function (social) {
                     var Icon = Icons[social.icon];
@@ -2540,13 +2587,13 @@ var Footer = function (_a) {
                     " SparkSwap. All rights reserved.")))));
 };
 var Footer$1 = React.memo(Footer);
-var templateObject_1$L, templateObject_2$g, templateObject_3$7, templateObject_4$2, templateObject_5$1;
+var templateObject_1$L, templateObject_2$h, templateObject_3$7, templateObject_4$2, templateObject_5$1;
 
 var Wrapper$1 = styled__default['default'].div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  position: relative;\n  flexdirection: column;\n  width: 100%;\n  min-height: 100vh;\n  background-color: ", ";\n"], ["\n  position: relative;\n  flexdirection: column;\n  width: 100%;\n  min-height: 100vh;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.background;
 });
-var StyledNav = styled__default['default'].nav(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  width: 100%;\n  margin: 0 auto;\n  transition: background-color 0.2s;\n  height: ", "px;\n  background-color: ", ";\n  z-index: 21;\n"], ["\n  position: sticky;\n  top: 0;\n  width: 100%;\n  margin: 0 auto;\n  transition: background-color 0.2s;\n  height: ", "px;\n  background-color: ",
+var StyledNav = styled__default['default'].nav(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  width: 100%;\n  margin: 0 auto;\n  transition: background-color 0.2s;\n  height: ", "px;\n  background-color: ", ";\n  z-index: 21;\n"], ["\n  position: sticky;\n  top: 0;\n  width: 100%;\n  margin: 0 auto;\n  transition: background-color 0.2s;\n  height: ", "px;\n  background-color: ",
     ";\n  z-index: 21;\n"])), MENU_HEIGHT, function (_a) {
     var theme = _a.theme, scrolled = _a.scrolled, filledBackground = _a.filledBackground;
     return scrolled || filledBackground ? theme.colors.background : "transparent";
@@ -2619,12 +2666,12 @@ var Layout = function (_a) {
     return (React__default['default'].createElement(Wrapper$1, null,
         React__default['default'].createElement(StyledNav, { scrolled: scrolled, filledBackground: filledBackground || isMobileMenuOpen },
             React__default['default'].createElement(StyledNavContainer, null,
-                React__default['default'].createElement(Logo, { href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+                React__default['default'].createElement(Logo$1, { href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                 isMobile ? (React__default['default'].createElement(React__default['default'].Fragment, null,
                     React__default['default'].createElement(MenuButton, { "aria-label": "Toggle menu", onClick: toggleMobileMenu }, isMobileMenuOpen ? (React__default['default'].createElement(Icon$L, { width: "24px", color: "textSubtle" })) : (React__default['default'].createElement(Icon$K, { width: "24px", color: "textSubtle" }))))) : (React__default['default'].createElement(React__default['default'].Fragment, null,
                     React__default['default'].createElement(HeaderNav, { links: links, handleOpenAccordion: handleOpenAccordion }),
                     React__default['default'].createElement(Flex, null,
-                        React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
+                        React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout, inHeader: true }),
                         profile && React__default['default'].createElement(Avatar, { profile: profile })))))),
         React__default['default'].createElement(BodyWrapper, null,
             isMobile && (React__default['default'].createElement(MobileMenuSideBar, { showMenu: isMobileMenuOpen, pushNav: handleMobileMenuClick, links: links, account: account, login: login, logout: logout, profile: profile })),
@@ -2633,14 +2680,14 @@ var Layout = function (_a) {
         React__default['default'].createElement(Footer$1, { socialLinks: socialLinks, logoLink: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" })));
 };
 var Layout$1 = React.memo(Layout);
-var templateObject_1$M, templateObject_2$h, templateObject_3$8, templateObject_4$3, templateObject_5$2;
+var templateObject_1$M, templateObject_2$i, templateObject_3$8, templateObject_4$3, templateObject_5$2;
 
-var ResetCSS = styled.createGlobalStyle(templateObject_1$N || (templateObject_1$N = __makeTemplateObject(["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'Kanit', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"], ["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'Kanit', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"])), function (_a) {
+var ResetCSS = styled.createGlobalStyle(templateObject_1$N || (templateObject_1$N = __makeTemplateObject(["\n    @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700&display=swap');\n    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');\n\n    /* prettier-ignore */\n    html, body, div, span, applet, object, iframe,\n    h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n    a, abbr, acronym, address, big, cite, code,\n    del, dfn, em, img, ins, kbd, q, s, samp,\n    small, strike, strong, sub, sup, tt, var,\n    b, u, i, center,\n    dl, dt, dd, ol, ul, li,\n    fieldset, form, label, legend,\n    table, caption, tbody, tfoot, thead, tr, th, td,\n    article, aside, canvas, details, embed,\n    figure, figcaption, footer, header, hgroup,\n    menu, nav, output, ruby, section, summary,\n    time, mark, audio, video {\n        margin: 0;\n        padding: 0;\n        border: 0;\n        font-size: 100%;\n        vertical-align: baseline;\n    }\n    /* HTML5 display-role reset for older browsers */\n    /* prettier-ignore */\n    article, aside, details, figcaption, figure,\n    footer, header, hgroup, menu, nav, section {\n        display: block;\n    }\n    body {\n        line-height: 1;\n        font-size: 16px;\n    }\n    ol,\n    ul {\n        list-style: disc;\n        list-style-position: inside;\n    }\n    blockquote,\n    q {\n        quotes: none;\n    }\n    blockquote:before,\n    blockquote:after,\n    q:before,\n    q:after {\n        content: \"\";\n        content: none;\n    }\n    table {\n        border-collapse: collapse;\n        border-spacing: 0;\n    }\n    a {\n        color: inherit;\n        text-decoration: none;\n    }\n    [role=\"button\"] {\n        cursor: pointer;\n    }\n    *,\n    *::before,\n    *::after {\n        box-sizing: border-box;\n    }\n    * {\n        font-family: 'Albert Sans', sans-serif;\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: grayscale;\n    }\n    /* Scrollbar */\n    ::-webkit-scrollbar {\n        width: 4px;\n    }\n    ::-webkit-scrollbar-thumb {\n        background: ", ";\n        border-radius: 8px;\n    }\n    ::-webkit-scrollbar-track {\n        box-shadow: inset 0 0 5px ", ";\n        border-radius: 10px;\n    }\n"], ["\n    @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700&display=swap');\n    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');\n\n    /* prettier-ignore */\n    html, body, div, span, applet, object, iframe,\n    h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n    a, abbr, acronym, address, big, cite, code,\n    del, dfn, em, img, ins, kbd, q, s, samp,\n    small, strike, strong, sub, sup, tt, var,\n    b, u, i, center,\n    dl, dt, dd, ol, ul, li,\n    fieldset, form, label, legend,\n    table, caption, tbody, tfoot, thead, tr, th, td,\n    article, aside, canvas, details, embed,\n    figure, figcaption, footer, header, hgroup,\n    menu, nav, output, ruby, section, summary,\n    time, mark, audio, video {\n        margin: 0;\n        padding: 0;\n        border: 0;\n        font-size: 100%;\n        vertical-align: baseline;\n    }\n    /* HTML5 display-role reset for older browsers */\n    /* prettier-ignore */\n    article, aside, details, figcaption, figure,\n    footer, header, hgroup, menu, nav, section {\n        display: block;\n    }\n    body {\n        line-height: 1;\n        font-size: 16px;\n    }\n    ol,\n    ul {\n        list-style: disc;\n        list-style-position: inside;\n    }\n    blockquote,\n    q {\n        quotes: none;\n    }\n    blockquote:before,\n    blockquote:after,\n    q:before,\n    q:after {\n        content: \"\";\n        content: none;\n    }\n    table {\n        border-collapse: collapse;\n        border-spacing: 0;\n    }\n    a {\n        color: inherit;\n        text-decoration: none;\n    }\n    [role=\"button\"] {\n        cursor: pointer;\n    }\n    *,\n    *::before,\n    *::after {\n        box-sizing: border-box;\n    }\n    * {\n        font-family: 'Albert Sans', sans-serif;\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: grayscale;\n    }\n    /* Scrollbar */\n    ::-webkit-scrollbar {\n        width: 4px;\n    }\n    ::-webkit-scrollbar-thumb {\n        background: ", ";\n        border-radius: 8px;\n    }\n    ::-webkit-scrollbar-track {\n        box-shadow: inset 0 0 5px ", ";\n        border-radius: 10px;\n    }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.textSubtle;
+    return theme.colors.primary;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.input;
+    return theme.colors.primaryDark;
 });
 var templateObject_1$N;
 
@@ -2664,13 +2711,17 @@ var brandColors = {
     binance: "#bc0fc8",
     pulse: "#bc0fc8",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#13161E", backgroundDisabled: "#191459", contrast: "#241326", invertedContrast: "#FFFFFF", input: "#231A85", tertiary: "#f4eff5", text: "#FFFFFF", textDisabled: "#c0bdc4", textSubtle: "#B8B6CB", borderColor: "#eae9eb", card: "#0F0749", headerBackground: "#01060A", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#13161E", backgroundDisabled: "#440248", contrast: "#241326", invertedContrast: "#FFFFFF", input: "#231A85", tertiary: "#f4eff5", text: "#FFFFFF", textDisabled: "#c0bdc4", textSubtle: "#B8B6CB", borderColor: "#eae9eb", card: "#191459", headerBackground: "#01060A", gradients: {
         bubblegum: "linear-gradient(139.73deg, #ebe6ff 0%, #fdefff 100%)",
         main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
+        button: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(123,38,215,1) 31%, rgba(221,19,177,1) 71%)",
+        background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)"
     } });
 var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#bc0fc8", background: "green", backgroundDisabled: "#423742", contrast: "#FFFFFF", invertedContrast: "#261325", input: "#573f5a", primaryDark: "#0098A1", tertiary: "#473542", text: "#f8e2fc", textDisabled: "#6f6171", textSubtle: "#d2c4d4", borderColor: "#634b63", card: "#2c262c", headerBackground: "#01060A", gradients: {
         bubblegum: "linear-gradient(139.73deg, #45315c 0%, #542a50 100%)",
         main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
+        button: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(123,38,215,1) 31%, rgba(221,19,177,1) 71%)",
+        background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)"
     } });
 
 var light = {
@@ -2694,34 +2745,34 @@ var light$1 = (_a$2 = {},
         color: "#FFFFFF",
     },
     _a$2[SECONDARY] = {
-        background: "transparent",
+        background: lightColors.background,
         backgroundActive: "transparent",
         backgroundHover: "transparent",
-        border: "2px solid " + lightColors.primary,
-        borderColorHover: lightColors.primaryBright,
+        border: "1px solid " + lightColors.secondaryBright,
+        borderColorHover: lightColors.secondary,
         boxShadow: "none",
         boxShadowActive: "none",
-        color: lightColors.primary,
+        color: lightColors.text,
     },
     _a$2[TERTIARY] = {
-        background: lightColors.tertiary,
-        backgroundActive: lightColors.tertiary,
-        backgroundHover: lightColors.tertiary,
+        background: baseColors.secondaryBright,
+        backgroundActive: baseColors.secondary,
+        backgroundHover: baseColors.secondary,
         border: 0,
         borderColorHover: "currentColor",
         boxShadow: "none",
         boxShadowActive: "none",
-        color: lightColors.primary,
+        color: lightColors.text,
     },
     _a$2[TEXT] = {
         background: "transparent",
         backgroundActive: "transparent",
-        backgroundHover: lightColors.tertiary,
+        backgroundHover: baseColors.secondaryDark,
         border: 0,
         borderColorHover: "currentColor",
         boxShadow: "none",
         boxShadowActive: "none",
-        color: lightColors.primary,
+        color: lightColors.text,
     },
     _a$2[DANGER] = {
         background: lightColors.failure,
@@ -2791,10 +2842,10 @@ var dark$3 = {
 };
 
 var light$4 = {
-    handleBackground: lightColors.card,
+    handleBackground: baseColors.secondaryBright,
 };
 var dark$4 = {
-    handleBackground: darkColors.card,
+    handleBackground: baseColors.secondaryBright,
 };
 
 var light$5 = {
@@ -2807,10 +2858,10 @@ var dark$5 = {
 };
 
 var light$6 = {
-    background: lightColors.card,
+    background: lightColors.gradients.background,
 };
 var dark$6 = {
-    background: darkColors.card,
+    background: darkColors.gradients.background,
 };
 
 var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark, button: dark$1, colors: darkColors, card: dark$2, toggle: dark$4, nav: dark$5, modal: dark$6, radio: dark$3 });
@@ -2894,6 +2945,7 @@ exports.Ticket = Icon$C;
 exports.TicketRound = Icon$D;
 exports.ToastContainer = ToastContainer;
 exports.Toggle = Toggle;
+exports.UserBlock = UserBlock;
 exports.VerifiedIcon = Icon$z;
 exports.WarningIcon = Icon$H;
 exports.Won = Icon$B;

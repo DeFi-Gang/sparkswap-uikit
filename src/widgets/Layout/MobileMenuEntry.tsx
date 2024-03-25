@@ -33,7 +33,7 @@ const MobileMenuEntry = styled.div<Props>`
   font-size: 16px;
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.textSubtle};
-  box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
+  box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.secondaryBright}` : "none")};
 
   a {
     display: flex;

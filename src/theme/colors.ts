@@ -26,7 +26,7 @@ export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
   background: "#13161E",
-  backgroundDisabled: "#191459",
+  backgroundDisabled: "#440248",
   contrast: "#241326",
   invertedContrast: "#FFFFFF",
   input: "#231A85",
@@ -35,11 +35,13 @@ export const lightColors: Colors = {
   textDisabled: "#c0bdc4",
   textSubtle: "#B8B6CB",
   borderColor: "#eae9eb",
-  card: "#0F0749",
+  card: "#191459",
   headerBackground: "#01060A",
   gradients: {
     bubblegum: "linear-gradient(139.73deg, #ebe6ff 0%, #fdefff 100%)",
     main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
+    button: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(123,38,215,1) 31%, rgba(221,19,177,1) 71%)",
+    background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)"
   },
 };
 
@@ -63,5 +65,7 @@ export const darkColors: Colors = {
   gradients: {
     bubblegum: "linear-gradient(139.73deg, #45315c 0%, #542a50 100%)",
     main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
+    button: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(123,38,215,1) 31%, rgba(221,19,177,1) 71%)",
+    background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)"
   },
 };
