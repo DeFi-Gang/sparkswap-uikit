@@ -11,14 +11,14 @@ interface Props {
   fullWidth?: boolean;
 }
 
-const UserBlock: React.FC<Props> = ({ account, login, logout , inHeader, fullWidth}) => {
+const UserBlock: React.FC<Props> = ({ account, login, logout, inHeader, fullWidth }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
   const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
   return (
     <>
       {account ? (
         <Button
-          size={inHeader ? "sm" : 'md'}
+          size={inHeader ? "sm" : "md"}
           fullWidth={fullWidth}
           variant="primary"
           onClick={() => {
@@ -29,13 +29,13 @@ const UserBlock: React.FC<Props> = ({ account, login, logout , inHeader, fullWid
         </Button>
       ) : (
         <Button
-          size={inHeader ? "sm" : 'md'}
+          size={inHeader ? "sm" : "md"}
           fullWidth={fullWidth}
           onClick={() => {
             onPresentConnectModal();
           }}
         >
-          {inHeader ? "Connect" : 'Connect wallet'}
+          {inHeader ? "Connect" : "Connect wallet"}
         </Button>
       )}
     </>

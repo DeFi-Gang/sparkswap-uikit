@@ -13,7 +13,7 @@ export const variants = {
 
 export type Variants = typeof variants[keyof typeof variants];
 
-export interface TagProps extends SpaceProps,PropsWithChildren<any> {
+export interface TagProps extends SpaceProps, PropsWithChildren<any> {
   variant?: Variants;
   startIcon?: ReactNode;
   endIcon?: ReactNode;

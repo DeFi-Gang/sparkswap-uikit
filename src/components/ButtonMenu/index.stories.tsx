@@ -46,10 +46,10 @@ export const Default: React.FC = () => {
       </Row>
       <Row>
         <ButtonMenu activeIndex={index} onClick={handleClick} variant="subtle">
-          <ButtonMenuItem variant='tertiary'>Button 1</ButtonMenuItem>
-          <ButtonMenuItem variant='tertiary'>Button 2</ButtonMenuItem>
-          <ButtonMenuItem variant='tertiary'>Button 3</ButtonMenuItem>
-          <ButtonMenuItem variant='tertiary'>Button 4</ButtonMenuItem>
+          <ButtonMenuItem variant="tertiary">Button 1</ButtonMenuItem>
+          <ButtonMenuItem variant="tertiary">Button 2</ButtonMenuItem>
+          <ButtonMenuItem variant="tertiary">Button 3</ButtonMenuItem>
+          <ButtonMenuItem variant="tertiary">Button 4</ButtonMenuItem>
         </ButtonMenu>
       </Row>
       <Row>
@@ -69,13 +69,13 @@ export const AsLinks: React.FC = () => {
     <>
       <Row>
         <ButtonMenu activeIndex={0}>
-          <ButtonMenuItem as="a" href="https://pancakeswap.finance" variant='tertiary'>
+          <ButtonMenuItem as="a" href="https://pancakeswap.finance" variant="tertiary">
             Link 1
           </ButtonMenuItem>
-          <ButtonMenuItem as="a" href="https://pancakeswap.finance" variant='tertiary'>
+          <ButtonMenuItem as="a" href="https://pancakeswap.finance" variant="tertiary">
             Link 2
           </ButtonMenuItem>
-          <ButtonMenuItem as="a" href="https://pancakeswap.finance" variant='tertiary'>
+          <ButtonMenuItem as="a" href="https://pancakeswap.finance" variant="tertiary">
             Link 3
           </ButtonMenuItem>
         </ButtonMenu>

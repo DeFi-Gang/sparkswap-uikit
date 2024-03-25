@@ -15,14 +15,14 @@ const StyledLink = styled(Link)`
   align-items: center;
 `;
 
-const StyledWrapLogo = styled.div<{ isFooter: boolean | undefined; }>`
-    display: flex;
-    flex-direction: ${({ isFooter }) => (isFooter ? 'column' : 'row')};
-    gap: 8px;
-    align-items: center;
-    ${({ theme }) => theme.mediaQueries.sm} {
-      flex-direction: row;
-    }
+const StyledWrapLogo = styled.div<{ isFooter: boolean | undefined }>`
+  display: flex;
+  flex-direction: ${({ isFooter }) => (isFooter ? "column" : "row")};
+  gap: 8px;
+  align-items: center;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+  }
 `;
 
 const Logo: React.FC<Props> = ({ href, isFooter }) => {
@@ -30,9 +30,9 @@ const Logo: React.FC<Props> = ({ href, isFooter }) => {
   // const innerLogo = <LogoIcon width={isFooter ? 171 : 92} />;
 
   const innerLogo = (
-    <StyledWrapLogo isFooter={isFooter} >
+    <StyledWrapLogo isFooter={isFooter}>
       <LogoIcon width={isFooter ? 82 : 35} />
-      <LogoWithText  />
+      <LogoWithText />
     </StyledWrapLogo>
   );
 

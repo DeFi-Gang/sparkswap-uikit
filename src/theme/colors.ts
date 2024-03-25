@@ -41,7 +41,7 @@ export const lightColors: Colors = {
     bubblegum: "linear-gradient(139.73deg, #ebe6ff 0%, #fdefff 100%)",
     main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
     button: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(123,38,215,1) 31%, rgba(221,19,177,1) 71%)",
-    background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)"
+    background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)",
   },
 };
 
@@ -66,6 +66,6 @@ export const darkColors: Colors = {
     bubblegum: "linear-gradient(139.73deg, #45315c 0%, #542a50 100%)",
     main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
     button: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(123,38,215,1) 31%, rgba(221,19,177,1) 71%)",
-    background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)"
+    background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)",
   },
 };

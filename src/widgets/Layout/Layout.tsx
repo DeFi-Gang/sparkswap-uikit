@@ -150,12 +150,7 @@ const Layout: FC<NavProps> = ({ account, login, logout, links, socialLinks, prof
             <>
               <HeaderNav links={links} handleOpenAccordion={handleOpenAccordion} />
               <Flex>
-                <UserBlock
-                  account={account}
-                  login={login}
-                  logout={logout}
-                  inHeader
-                />
+                <UserBlock account={account} login={login} logout={logout} inHeader />
                 {profile && <Avatar profile={profile} />}
               </Flex>
             </>
