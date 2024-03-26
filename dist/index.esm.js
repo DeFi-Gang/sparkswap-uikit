@@ -860,7 +860,7 @@ var style = (_a = {},
         fontSize: "130px",
     },
     _a);
-var Heading = styled(Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n    @import url(\"https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap\");\n\n    ", "\n    font-weight: 700;\n    line-height: 1.1;\n    font-family: \"Orbitron\",serif;\n"], ["\n    @import url(\"https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap\");\n\n    ", "\n    font-weight: 700;\n    line-height: 1.1;\n    font-family: \"Orbitron\",serif;\n"])), function (_a) {
+var Heading = styled(Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  @import url(\"https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap\");\n\n  ", "\n  font-weight: 700;\n  line-height: 1.1;\n  font-family: \"Orbitron\", serif;\n"], ["\n  @import url(\"https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap\");\n\n  ", "\n  font-weight: 700;\n  line-height: 1.1;\n  font-family: \"Orbitron\", serif;\n"])), function (_a) {
     var size = _a.size;
     return style[size || sizes$1.MD];
 });
@@ -971,7 +971,7 @@ var getHeight = function (_a) {
 };
 var Input = styled.input(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.input;
+    return theme.colors.background;
 }, getBoxShadow$1, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
@@ -2147,9 +2147,9 @@ var IconModule = /*#__PURE__*/Object.freeze({
 });
 
 var StyledLink$1 = styled(Link$1)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
-var StyledWrapLogo = styled.div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n    display: flex;\n    flex-direction: ", ";\n    gap: 8px;\n    align-items: center;\n    ", " {\n      flex-direction: row;\n    }\n"], ["\n    display: flex;\n    flex-direction: ", ";\n    gap: 8px;\n    align-items: center;\n    ", " {\n      flex-direction: row;\n    }\n"])), function (_a) {
+var StyledWrapLogo = styled.div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  display: flex;\n  flex-direction: ", ";\n  gap: 8px;\n  align-items: center;\n  ", " {\n    flex-direction: row;\n  }\n"], ["\n  display: flex;\n  flex-direction: ", ";\n  gap: 8px;\n  align-items: center;\n  ", " {\n    flex-direction: row;\n  }\n"])), function (_a) {
     var isFooter = _a.isFooter;
-    return (isFooter ? 'column' : 'row');
+    return (isFooter ? "column" : "row");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -2172,11 +2172,11 @@ var UserBlock = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, inHeader = _a.inHeader, fullWidth = _a.fullWidth;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React.createElement(React.Fragment, null, account ? (React.createElement(Button, { size: inHeader ? "sm" : 'md', fullWidth: fullWidth, variant: "primary", onClick: function () {
+    return (React.createElement(React.Fragment, null, account ? (React.createElement(Button, { size: inHeader ? "sm" : "md", fullWidth: fullWidth, variant: "primary", onClick: function () {
             onPresentAccountModal();
-        } }, accountEllipsis)) : (React.createElement(Button, { size: inHeader ? "sm" : 'md', fullWidth: fullWidth, onClick: function () {
+        } }, accountEllipsis)) : (React.createElement(Button, { size: inHeader ? "sm" : "md", fullWidth: fullWidth, onClick: function () {
             onPresentConnectModal();
-        } }, inHeader ? "Connect" : 'Connect wallet'))));
+        } }, inHeader ? "Connect" : "Connect wallet"))));
 };
 
 var links = [
@@ -2702,13 +2702,13 @@ var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { ba
         bubblegum: "linear-gradient(139.73deg, #ebe6ff 0%, #fdefff 100%)",
         main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
         button: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(123,38,215,1) 31%, rgba(221,19,177,1) 71%)",
-        background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)"
+        background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)",
     } });
 var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#bc0fc8", background: "green", backgroundDisabled: "#423742", contrast: "#FFFFFF", invertedContrast: "#261325", input: "#573f5a", primaryDark: "#0098A1", tertiary: "#473542", text: "#f8e2fc", textDisabled: "#6f6171", textSubtle: "#d2c4d4", borderColor: "#634b63", card: "#2c262c", headerBackground: "#01060A", gradients: {
         bubblegum: "linear-gradient(139.73deg, #45315c 0%, #542a50 100%)",
         main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
         button: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(123,38,215,1) 31%, rgba(221,19,177,1) 71%)",
-        background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)"
+        background: "linear-gradient(180deg, rgba(12, 15, 19, 1) 0%, rgba(23, 26, 36, 1) 100%)",
     } });
 
 var light = {
