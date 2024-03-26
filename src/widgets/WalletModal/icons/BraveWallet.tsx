@@ -10,18 +10,8 @@ function Icon() {
       viewBox="0 0 83 96"
     >
       <defs>
-        <filter
-          id="alpha"
-          width="100%"
-          height="100%"
-          x="0%"
-          y="0%"
-          filterUnits="objectBoundingBox"
-        >
-          <feColorMatrix
-            in="SourceGraphic"
-            values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
-          ></feColorMatrix>
+        <filter id="alpha" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+          <feColorMatrix in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
         </filter>
         <mask id="mask0">
           <g filter="url(#alpha)">

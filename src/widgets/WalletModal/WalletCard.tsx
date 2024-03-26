@@ -17,7 +17,7 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => 
   return (
     <Button
       fullWidth
-      variant="tertiary"
+      variant="secondary"
       onClick={() => {
         login(walletConfig.connectorId);
         window.localStorage.setItem(localStorageKey, "1");
@@ -27,10 +27,14 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => 
       mb={mb}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
     >
-      <Text bold color="primary" mr="16px">
+      <Text bold mr="16px">
         {title}
       </Text>
-      {walletConfig.icon ? <walletConfig.icon width="32px" /> : (<Image src={walletConfig.fallbackImage ?? 'images/wallets/other.png'} alt={title} width={32} height={32} />)}
+      {walletConfig.icon ? (
+        <walletConfig.icon width="32px" />
+      ) : (
+        <Image src={walletConfig.fallbackImage ?? "images/wallets/other.png"} alt={title} width={32} height={32} />
+      )}
     </Button>
   );
 };

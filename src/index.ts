@@ -27,9 +27,10 @@ export * from "./hooks";
 
 // Widgets
 export * from "./widgets/Modal";
-export * from "./widgets/Menu";
 export * from "./widgets/Toast";
 export * from "./widgets/WalletModal";
+export * from "./widgets/Layout";
+export * from "./widgets/Layout/UserBlock";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";

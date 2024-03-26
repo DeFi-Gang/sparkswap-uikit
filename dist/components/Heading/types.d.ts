@@ -7,10 +7,14 @@ export declare const tags: {
     H6: string;
 };
 export declare const sizes: {
+    XS: string;
+    SM: string;
     MD: string;
     LG: string;
     XL: string;
     XXL: string;
+    XXXL: string;
+    XXXXL: string;
 };
 export declare type Tags = typeof tags[keyof typeof tags];
 export declare type Sizes = typeof sizes[keyof typeof sizes];

@@ -6,9 +6,9 @@ const Toggle: React.FC<ToggleProps> = ({ checked, ...props }) => {
   const isChecked = !!checked;
 
   return (
-    <StyledToggle checked={isChecked}>
+    <StyledToggle>
       <Input checked={checked} {...props} type="checkbox" />
-      <Handle />
+      <Handle checked={isChecked} />
     </StyledToggle>
   );
 };
