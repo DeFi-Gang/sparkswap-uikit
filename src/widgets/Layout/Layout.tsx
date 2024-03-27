@@ -20,10 +20,11 @@ import Footer from "./Footer";
 
 const Wrapper = styled.div`
   position: relative;
-  flexdirection: column;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.contrast};
 `;
 
 const StyledNav = styled.nav<{ scrolled: boolean; filledBackground: boolean }>`
@@ -34,7 +35,7 @@ const StyledNav = styled.nav<{ scrolled: boolean; filledBackground: boolean }>`
   transition: background-color 0.2s;
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme, scrolled, filledBackground }) =>
-    scrolled || filledBackground ? theme.colors.background : "transparent"};
+    scrolled || filledBackground ? theme.colors.contrast : "transparent"};
   z-index: 21;
 `;
 

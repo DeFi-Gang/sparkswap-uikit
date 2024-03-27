@@ -232,13 +232,17 @@ var Icon$6 = function (props) {
 };
 
 var Icon$7 = function (props) {
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React.createElement("path", { d: "M8.71005 11.71L11.3001 14.3C11.6901 14.69 12.3201 14.69 12.7101 14.3L15.3001 11.71C15.9301 11.08 15.4801 10 14.5901 10H9.41005C8.52005 10 8.08005 11.08 8.71005 11.71Z" })));
+    return (React.createElement(Svg, __assign({ width: "20", height: "20", viewBox: "0 0 20 20", fill: "none" }, props),
+        React.createElement("g", { clipPath: "url(#clip0_2197_2017)" },
+            React.createElement("path", { d: "M15.416 8.33333L10.416 13.3333L5.41602 8.33333", stroke: "#E9E9E9", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" })),
+        React.createElement("defs", null,
+            React.createElement("clipPath", { id: "clip0_2197_2017" },
+                React.createElement("rect", { width: "20", height: "20", fill: "white" })))));
 };
 
 var Icon$8 = function (props) {
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React.createElement("path", { d: "M8.71005 12.29L11.3001 9.69997C11.6901 9.30997 12.3201 9.30997 12.7101 9.69997L15.3001 12.29C15.9301 12.92 15.4801 14 14.5901 14H9.41005C8.52005 14 8.08005 12.92 8.71005 12.29Z" })));
+    return (React.createElement(Svg, __assign({ viewBox: "0 0 20 20", fill: "none" }, props),
+        React.createElement("path", { d: "M4.58203 11.6667L9.58203 6.66667L14.582 11.6667", stroke: "#E9E9E9", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" })));
 };
 
 var Icon$9 = function (props) {
@@ -2576,14 +2580,14 @@ var Footer = function (_a) {
 var Footer$1 = memo(Footer);
 var templateObject_1$L, templateObject_2$h, templateObject_3$7, templateObject_4$2, templateObject_5$1;
 
-var Wrapper$1 = styled.div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  position: relative;\n  flexdirection: column;\n  width: 100%;\n  min-height: 100vh;\n  background-color: ", ";\n"], ["\n  position: relative;\n  flexdirection: column;\n  width: 100%;\n  min-height: 100vh;\n  background-color: ", ";\n"])), function (_a) {
+var Wrapper$1 = styled.div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  min-height: 100vh;\n  background-color: ", ";\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  min-height: 100vh;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.background;
+    return theme.colors.contrast;
 });
 var StyledNav = styled.nav(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  width: 100%;\n  margin: 0 auto;\n  transition: background-color 0.2s;\n  height: ", "px;\n  background-color: ", ";\n  z-index: 21;\n"], ["\n  position: sticky;\n  top: 0;\n  width: 100%;\n  margin: 0 auto;\n  transition: background-color 0.2s;\n  height: ", "px;\n  background-color: ",
     ";\n  z-index: 21;\n"])), MENU_HEIGHT, function (_a) {
     var theme = _a.theme, scrolled = _a.scrolled, filledBackground = _a.filledBackground;
-    return scrolled || filledBackground ? theme.colors.background : "transparent";
+    return scrolled || filledBackground ? theme.colors.contrast : "transparent";
 });
 var StyledNavContainer = styled.nav(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 15px;\n  width: 100%;\n  max-width: 1920px;\n  margin: 0 auto;\n  height: 100%;\n  ", " {\n    padding: 0 30px;\n  }\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 15px;\n  width: 100%;\n  max-width: 1920px;\n  margin: 0 auto;\n  height: 100%;\n  ", " {\n    padding: 0 30px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -2698,7 +2702,7 @@ var brandColors = {
     binance: "#bc0fc8",
     pulse: "#bc0fc8",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#13161E", backgroundDisabled: "#440248", contrast: "#241326", invertedContrast: "#FFFFFF", input: "#231A85", tertiary: "#f4eff5", text: "#FFFFFF", textDisabled: "#c0bdc4", textSubtle: "#B8B6CB", borderColor: "#eae9eb", card: "#191459", headerBackground: "#01060A", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#13161E", backgroundDisabled: "#440248", contrast: "#0D0E0F", invertedContrast: "#FFFFFF", input: "#231A85", tertiary: "#f4eff5", text: "#FFFFFF", textDisabled: "#c0bdc4", textSubtle: "#B8B6CB", borderColor: "#eae9eb", card: "#191459", headerBackground: "#01060A", gradients: {
         bubblegum: "linear-gradient(139.73deg, #ebe6ff 0%, #fdefff 100%)",
         main: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(221,19,177,1) 100%)",
         button: "linear-gradient(90deg, rgba(32,55,251,1) 0%, rgba(123,38,215,1) 31%, rgba(221,19,177,1) 71%)",
