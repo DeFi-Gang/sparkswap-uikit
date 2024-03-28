@@ -6,7 +6,7 @@ import { NavHeaderEntry } from "./NavHeaderEntry";
 import NavLinkHeader from "./NavLink";
 import HeaderNavAccordion from "./HeaderNavAccordion";
 
-import { HeaderNavProps } from "./types";
+import { HeaderNavProps, NavEntry } from "./types";
 
 interface Props extends HeaderNavProps {
   handleOpenAccordion: (close?: boolean) => void;
@@ -22,7 +22,6 @@ const Container = styled.div`
 const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
   const location = useLocation();
   const ref = useRef<HTMLDivElement>(null);
-
 
   const [openAccordionIndex, setOpenAccordionIndex] = useState<number | null>(null);
 
@@ -56,6 +55,15 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
     };
   }, [handleClickOutside]);
 
+  const isLinkActive = useCallback((href: string) => {
+    return location.pathname === href || (href !== "/" && !!href && location.pathname.startsWith(href));
+  }, [location.pathname]);
+
+  const isParentActive = useCallback((entry: NavEntry) => {
+    if (!entry.items) return false;
+    return entry.items.some(item => isLinkActive(item.href));
+  }, [isLinkActive]);
+
   return (
     <Container>
       {links.map((entry, index) => {
@@ -66,6 +74,7 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
             <div ref={ref}>
               <HeaderNavAccordion
                 isOpen={openAccordionIndex === index}
+                isActive={isParentActive(entry)}
                 handleClick={() => handleClick(index, true)}
                 key={entry.label}
                 label={entry.label}
@@ -76,7 +85,7 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
                     isInAccordion
                     key={item.href}
                     secondary
-                    isActive={location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href))}
+                    isActive={isLinkActive(item.href)}
                     onClick={() => handleClick(index)}
                   >
                     {item.openTab ? (
@@ -94,8 +103,11 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
         }
         return (
           <NavHeaderEntry
-            key={entry.label}
-            isActive={location.pathname === entry.href || (entry.href !== '/' && !!entry.href && location.pathname.startsWith(entry.href))}
+            key={entry.label} isActive={!!entry.href && isLinkActive(entry.href)}
+            // isActive={
+            //   location.pathname === entry.href ||
+            //   (entry.href !== "/" && !!entry.href && location.pathname.startsWith(entry.href))
+            // }
             className={calloutClass}
           >
             <NavLinkHeader href={entry.href} onClick={() => handleClick(index)}>

@@ -10,6 +10,7 @@ interface Props extends PropsWithChildren<unknown> {
   label: string;
   className?: string;
   isOpen: boolean;
+  isActive?: boolean;
   handleClick: () => void;
 }
 
@@ -38,10 +39,10 @@ const AccordionContent = styled.div<{ isOpen: boolean; maxHeight: number }>`
   padding: ${({ isOpen }) => (isOpen ? `16px 0` : 0)};
 `;
 
-const HeaderNavAccordion: FC<Props> = ({ label, isOpen, handleClick, children, className }) => {
+const HeaderNavAccordion: FC<Props> = ({ label, isOpen, handleClick, children, className, isActive }) => {
   return (
     <Container>
-      <NavHeaderEntry onClick={handleClick} className={className}>
+      <NavHeaderEntry onClick={handleClick} className={className} isActive={isActive}>
         {label}
         {isOpen ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
       </NavHeaderEntry>
