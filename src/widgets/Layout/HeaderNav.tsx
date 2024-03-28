@@ -55,14 +55,20 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
     };
   }, [handleClickOutside]);
 
-  const isLinkActive = useCallback((href: string) => {
-    return location.pathname === href || (href !== "/" && !!href && location.pathname.startsWith(href));
-  }, [location.pathname]);
+  const isLinkActive = useCallback(
+    (href: string) => {
+      return location.pathname === href || (href !== "/" && !!href && location.pathname.startsWith(href));
+    },
+    [location.pathname]
+  );
 
-  const isParentActive = useCallback((entry: NavEntry) => {
-    if (!entry.items) return false;
-    return entry.items.some(item => isLinkActive(item.href));
-  }, [isLinkActive]);
+  const isParentActive = useCallback(
+    (entry: NavEntry) => {
+      if (!entry.items) return false;
+      return entry.items.some((item) => isLinkActive(item.href));
+    },
+    [isLinkActive]
+  );
 
   return (
     <Container>
@@ -103,7 +109,8 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
         }
         return (
           <NavHeaderEntry
-            key={entry.label} isActive={!!entry.href && isLinkActive(entry.href)}
+            key={entry.label}
+            isActive={!!entry.href && isLinkActive(entry.href)}
             // isActive={
             //   location.pathname === entry.href ||
             //   (entry.href !== "/" && !!entry.href && location.pathname.startsWith(entry.href))
