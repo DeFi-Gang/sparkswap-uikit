@@ -215,6 +215,11 @@ export const socialsFooter = [
 ];
 export const linksSpark = [
   {
+    label: "Home",
+    icon: "HomeIcon",
+    href: "/",
+  },
+  {
     label: "Bridge",
     icon: "FarmIcon",
     href: "/bridge",

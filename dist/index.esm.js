@@ -2517,9 +2517,9 @@ var HeaderNav = function (_a) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         if (entry.items) {
             return (React.createElement("div", { ref: ref },
-                React.createElement(HeaderNavAccordion$1, { isOpen: openAccordionIndex === index, handleClick: function () { return handleClick(index, true); }, key: entry.label, label: entry.label, className: calloutClass }, entry.items.map(function (item) { return (React.createElement(NavHeaderEntry, { isInAccordion: true, key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: function () { return handleClick(index); } }, item.openTab ? (React.createElement(NavLinkHeader, { target: "_blank", href: item.href }, item.label)) : (React.createElement(NavLinkHeader, { href: item.href }, item.label)))); }))));
+                React.createElement(HeaderNavAccordion$1, { isOpen: openAccordionIndex === index, handleClick: function () { return handleClick(index, true); }, key: entry.label, label: entry.label, className: calloutClass }, entry.items.map(function (item) { return (React.createElement(NavHeaderEntry, { isInAccordion: true, key: item.href, secondary: true, isActive: location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href)), onClick: function () { return handleClick(index); } }, item.openTab ? (React.createElement(NavLinkHeader, { target: "_blank", href: item.href }, item.label)) : (React.createElement(NavLinkHeader, { href: item.href }, item.label)))); }))));
         }
-        return (React.createElement(NavHeaderEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
+        return (React.createElement(NavHeaderEntry, { key: entry.label, isActive: location.pathname === entry.href || (entry.href !== '/' && !!entry.href && location.pathname.startsWith(entry.href)), className: calloutClass },
             React.createElement(NavLinkHeader, { href: entry.href, onClick: function () { return handleClick(index); } }, entry.label)));
     })));
 };
@@ -2593,7 +2593,7 @@ var StyledNavContainer = styled.nav(templateObject_3$8 || (templateObject_3$8 = 
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var BodyWrapper = styled.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: calc(100vh - ", "px - ", "px);\n  ", " {\n    min-height: calc(100vh - ", "px - ", "px);\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: calc(100vh - ", "px - ", "px);\n  ", " {\n    min-height: calc(100vh - ", "px - ", "px);\n  }\n"])), MENU_HEIGHT, FOOTER_HEIGHT_MOBILE, function (_a) {
+var BodyWrapper = styled.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  min-height: calc(100vh - ", "px - ", "px);\n  ", " {\n    min-height: calc(100vh - ", "px - ", "px);\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  min-height: calc(100vh - ", "px - ", "px);\n  ", " {\n    min-height: calc(100vh - ", "px - ", "px);\n  }\n"])), MENU_HEIGHT, FOOTER_HEIGHT_MOBILE, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, MENU_HEIGHT, FOOTER_HEIGHT);
