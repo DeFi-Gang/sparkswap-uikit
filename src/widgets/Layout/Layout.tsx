@@ -56,6 +56,9 @@ const StyledNavContainer = styled.nav`
 const BodyWrapper = styled.div`
   position: relative;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   min-height: calc(100vh - ${MENU_HEIGHT}px - ${FOOTER_HEIGHT_MOBILE}px);
   ${({ theme }) => theme.mediaQueries.sm} {
     min-height: calc(100vh - ${MENU_HEIGHT}px - ${FOOTER_HEIGHT}px);
