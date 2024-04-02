@@ -1806,9 +1806,9 @@ var Modal = function (_a) {
 };
 var templateObject_1$u, templateObject_2$9, templateObject_3$5;
 
-var Overlay = styled__default['default'].div.attrs({ role: "presentation" })(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #452a7a;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #452a7a;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"])), function (_a) {
+var Overlay = styled__default['default'].div.attrs({ role: "presentation" })(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(8, 13, 24);\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(8, 13, 24);\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"])), function (_a) {
     var show = _a.show;
-    return (show ? 0.6 : 0);
+    return (show ? 0.72 : 0);
 }, function (_a) {
     var zIndex = _a.zIndex;
     return zIndex;
@@ -2488,9 +2488,9 @@ var AccordionContent$1 = styled__default['default'].div(templateObject_2$g || (t
     return (isOpen ? "16px 0" : 0);
 });
 var HeaderNavAccordion = function (_a) {
-    var label = _a.label, isOpen = _a.isOpen, handleClick = _a.handleClick, children = _a.children, className = _a.className;
+    var label = _a.label, isOpen = _a.isOpen, handleClick = _a.handleClick, children = _a.children, className = _a.className, isActive = _a.isActive;
     return (React__default['default'].createElement(Container$4, null,
-        React__default['default'].createElement(NavHeaderEntry, { onClick: handleClick, className: className },
+        React__default['default'].createElement(NavHeaderEntry, { onClick: handleClick, className: className, isActive: isActive },
             label,
             isOpen ? React__default['default'].createElement(Icon$7, null) : React__default['default'].createElement(Icon$8, null)),
         React__default['default'].createElement(AccordionContent$1, { isOpen: isOpen, maxHeight: (React__default['default'].Children.count(children) + 8) * MENU_ENTRY_HEIGHT + 32 }, children)));
@@ -2526,13 +2526,26 @@ var HeaderNav = function (_a) {
             document.removeEventListener("click", handleClickOutside, true);
         };
     }, [handleClickOutside]);
+    var isLinkActive = React.useCallback(function (href) {
+        return location.pathname === href || (href !== "/" && !!href && location.pathname.startsWith(href));
+    }, [location.pathname]);
+    var isParentActive = React.useCallback(function (entry) {
+        if (!entry.items)
+            return false;
+        return entry.items.some(function (item) { return isLinkActive(item.href); });
+    }, [isLinkActive]);
     return (React__default['default'].createElement(Container$5, null, links.map(function (entry, index) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         if (entry.items) {
             return (React__default['default'].createElement("div", { ref: ref },
-                React__default['default'].createElement(HeaderNavAccordion$1, { isOpen: openAccordionIndex === index, handleClick: function () { return handleClick(index, true); }, key: entry.label, label: entry.label, className: calloutClass }, entry.items.map(function (item) { return (React__default['default'].createElement(NavHeaderEntry, { isInAccordion: true, key: item.href, secondary: true, isActive: location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href)), onClick: function () { return handleClick(index); } }, item.openTab ? (React__default['default'].createElement(NavLinkHeader, { target: "_blank", href: item.href }, item.label)) : (React__default['default'].createElement(NavLinkHeader, { href: item.href }, item.label)))); }))));
+                React__default['default'].createElement(HeaderNavAccordion$1, { isOpen: openAccordionIndex === index, isActive: isParentActive(entry), handleClick: function () { return handleClick(index, true); }, key: entry.label, label: entry.label, className: calloutClass }, entry.items.map(function (item) { return (React__default['default'].createElement(NavHeaderEntry, { isInAccordion: true, key: item.href, secondary: true, isActive: isLinkActive(item.href), onClick: function () { return handleClick(index); } }, item.openTab ? (React__default['default'].createElement(NavLinkHeader, { target: "_blank", href: item.href }, item.label)) : (React__default['default'].createElement(NavLinkHeader, { href: item.href }, item.label)))); }))));
         }
-        return (React__default['default'].createElement(NavHeaderEntry, { key: entry.label, isActive: location.pathname === entry.href || (entry.href !== '/' && !!entry.href && location.pathname.startsWith(entry.href)), className: calloutClass },
+        return (React__default['default'].createElement(NavHeaderEntry, { key: entry.label, isActive: !!entry.href && isLinkActive(entry.href), 
+            // isActive={
+            //   location.pathname === entry.href ||
+            //   (entry.href !== "/" && !!entry.href && location.pathname.startsWith(entry.href))
+            // }
+            className: calloutClass },
             React__default['default'].createElement(NavLinkHeader, { href: entry.href, onClick: function () { return handleClick(index); } }, entry.label)));
     })));
 };
