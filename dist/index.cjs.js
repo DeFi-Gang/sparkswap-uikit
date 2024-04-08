@@ -223,7 +223,10 @@ Button.defaultProps = {
     disabled: false,
 };
 
-var IconButton = styled__default['default'](Button)(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  padding: 0;\n  width: ", ";\n"], ["\n  padding: 0;\n  width: ", ";\n"])), function (_a) {
+var IconButton = styled__default['default'](Button)(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  padding: 0;\n  width: ", ";\n  height: ", ";\n"], ["\n  padding: 0;\n  width: ", ";\n  height: ", ";\n"])), function (_a) {
+    var size = _a.size;
+    return (size === "sm" ? "32px" : "48px");
+}, function (_a) {
     var size = _a.size;
     return (size === "sm" ? "32px" : "48px");
 });
