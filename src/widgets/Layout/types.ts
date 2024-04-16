@@ -1,3 +1,4 @@
+import { PropsWithChildren } from "react";
 import { Login } from "../WalletModal/types";
 import { IconType } from "./icons/types";
 
@@ -47,10 +48,9 @@ export interface FooterLinks {
   socialLinks: Array<SocialEntry>;
 }
 
-export interface NavProps extends HeaderNavProps, FooterLinks {
+export interface NavProps extends HeaderNavProps, FooterLinks, PropsWithChildren<unknown> {
   account?: string;
   login: Login;
   profile?: Profile;
   logout: () => void;
-  children?: JSX.Element | JSX.Element[];
 }
