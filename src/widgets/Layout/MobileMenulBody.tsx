@@ -35,7 +35,7 @@ const MobileMenuBody: React.FC<Props> = ({ pushNav, links }) => {
               className={calloutClass}
             >
               {entry.items.map((item) => (
-                <MobileMenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={pushNav}>
+                <MobileMenuEntry key={item.label} secondary isActive={item.href === location.pathname} onClick={pushNav}>
                   {item.openTab ? (
                     <MenuLink target="_blank" href={item.href}>
                       {item.label}
