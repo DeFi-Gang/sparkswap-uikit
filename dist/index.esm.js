@@ -2378,7 +2378,7 @@ var MobileMenuBody = function (_a) {
     return (React.createElement(Container$3, null, links.map(function (entry) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         if (entry.items) {
-            return (React.createElement(MobileAccordion, { key: entry.label, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, entry.items.map(function (item) { return (React.createElement(MobileMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: pushNav }, item.openTab ? (React.createElement(MenuLink, { target: "_blank", href: item.href }, item.label)) : (React.createElement(MenuLink, { href: item.href }, item.label)))); })));
+            return (React.createElement(MobileAccordion, { key: entry.label, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, entry.items.map(function (item) { return (React.createElement(MobileMenuEntry, { key: item.label, secondary: true, isActive: item.href === location.pathname, onClick: pushNav }, item.openTab ? (React.createElement(MenuLink, { target: "_blank", href: item.href }, item.label)) : (React.createElement(MenuLink, { href: item.href }, item.label)))); })));
         }
         return (React.createElement(MobileMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
             React.createElement(MenuLink, { href: entry.href, onClick: pushNav },
@@ -2527,15 +2527,10 @@ var HeaderNav = function (_a) {
     return (React.createElement(Container$5, null, links.map(function (entry, index) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         if (entry.items) {
-            return (React.createElement("div", { ref: ref },
-                React.createElement(HeaderNavAccordion$1, { isOpen: openAccordionIndex === index, isActive: isParentActive(entry), handleClick: function () { return handleClick(index, true); }, key: entry.label, label: entry.label, className: calloutClass }, entry.items.map(function (item) { return (React.createElement(NavHeaderEntry, { isInAccordion: true, key: item.href, secondary: true, isActive: isLinkActive(item.href), onClick: function () { return handleClick(index); } }, item.openTab ? (React.createElement(NavLinkHeader, { target: "_blank", href: item.href }, item.label)) : (React.createElement(NavLinkHeader, { href: item.href }, item.label)))); }))));
+            return (React.createElement("div", { ref: ref, key: entry.label },
+                React.createElement(HeaderNavAccordion$1, { isOpen: openAccordionIndex === index, isActive: isParentActive(entry), handleClick: function () { return handleClick(index, true); }, key: entry.label, label: entry.label, className: calloutClass }, entry.items.map(function (item) { return (React.createElement(NavHeaderEntry, { isInAccordion: true, key: item.label, secondary: true, isActive: isLinkActive(item.href), onClick: function () { return handleClick(index); } }, item.openTab ? (React.createElement(NavLinkHeader, { target: "_blank", href: item.href }, item.label)) : (React.createElement(NavLinkHeader, { href: item.href }, item.label)))); }))));
         }
-        return (React.createElement(NavHeaderEntry, { key: entry.label, isActive: !!entry.href && isLinkActive(entry.href), 
-            // isActive={
-            //   location.pathname === entry.href ||
-            //   (entry.href !== "/" && !!entry.href && location.pathname.startsWith(entry.href))
-            // }
-            className: calloutClass },
+        return (React.createElement(NavHeaderEntry, { key: entry.label, isActive: !!entry.href && isLinkActive(entry.href), className: calloutClass },
             React.createElement(NavLinkHeader, { href: entry.href, onClick: function () { return handleClick(index); } }, entry.label)));
     })));
 };

@@ -77,7 +77,7 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
 
         if (entry.items) {
           return (
-            <div ref={ref}>
+            <div ref={ref} key={entry.label}>
               <HeaderNavAccordion
                 isOpen={openAccordionIndex === index}
                 isActive={isParentActive(entry)}
@@ -89,7 +89,7 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
                 {entry.items.map((item) => (
                   <NavHeaderEntry
                     isInAccordion
-                    key={item.href}
+                    key={item.label}
                     secondary
                     isActive={isLinkActive(item.href)}
                     onClick={() => handleClick(index)}
@@ -111,10 +111,6 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
           <NavHeaderEntry
             key={entry.label}
             isActive={!!entry.href && isLinkActive(entry.href)}
-            // isActive={
-            //   location.pathname === entry.href ||
-            //   (entry.href !== "/" && !!entry.href && location.pathname.startsWith(entry.href))
-            // }
             className={calloutClass}
           >
             <NavLinkHeader href={entry.href} onClick={() => handleClick(index)}>
