@@ -2393,9 +2393,9 @@ var MobileMenuBody = function (_a) {
         if (entry.items) {
             return (React__default['default'].createElement(MobileAccordion, { key: entry.label, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, entry.items.map(function (item) { return (React__default['default'].createElement(MobileMenuEntry, { key: item.label, secondary: true, isActive: item.href === location.pathname, onClick: pushNav }, item.openTab ? (React__default['default'].createElement(MenuLink, { target: "_blank", href: item.href }, item.label)) : (React__default['default'].createElement(MenuLink, { href: item.href }, item.label)))); })));
         }
-        return (React__default['default'].createElement(MobileMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
-            React__default['default'].createElement(MenuLink, { href: entry.href, onClick: pushNav },
-                React__default['default'].createElement(LinkLabel, null, entry.label))));
+        return (React__default['default'].createElement(MobileMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass }, entry.openTab ? (React__default['default'].createElement(MenuLink, { target: "_blank", href: entry.href, onClick: pushNav },
+            React__default['default'].createElement(LinkLabel, null, entry.label))) : (React__default['default'].createElement(MenuLink, { href: entry.href, onClick: pushNav },
+            React__default['default'].createElement(LinkLabel, null, entry.label)))));
     })));
 };
 var templateObject_1$E;
@@ -2534,8 +2534,7 @@ var HeaderNav = function (_a) {
             return (React__default['default'].createElement("div", { ref: ref, key: entry.label },
                 React__default['default'].createElement(HeaderNavAccordion$1, { isOpen: openAccordionIndex === index, isActive: isParentActive(entry), handleClick: function () { return handleClick(index, true); }, key: entry.label, label: entry.label, className: calloutClass }, entry.items.map(function (item) { return (React__default['default'].createElement(NavHeaderEntry, { isInAccordion: true, key: item.label, secondary: true, isActive: isLinkActive(item.href), onClick: function () { return handleClick(index); } }, item.openTab ? (React__default['default'].createElement(MenuLink, { target: "_blank", href: item.href }, item.label)) : (React__default['default'].createElement(MenuLink, { href: item.href }, item.label)))); }))));
         }
-        return (React__default['default'].createElement(NavHeaderEntry, { key: entry.label, isActive: !!entry.href && isLinkActive(entry.href), className: calloutClass },
-            React__default['default'].createElement(MenuLink, { href: entry.href, onClick: function () { return handleClick(index); } }, entry.label)));
+        return (React__default['default'].createElement(NavHeaderEntry, { key: entry.label, isActive: !!entry.href && isLinkActive(entry.href), className: calloutClass }, entry.openTab ? (React__default['default'].createElement(MenuLink, { target: "_blank", href: entry.href, onClick: function () { return handleClick(index); } }, entry.label)) : (React__default['default'].createElement(MenuLink, { href: entry.href, onClick: function () { return handleClick(index); } }, entry.label))));
     })));
 };
 var templateObject_1$J;

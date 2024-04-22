@@ -47,6 +47,13 @@ export declare const linksSpark: ({
     label: string;
     icon: string;
     href: string;
+    openTab?: undefined;
+    items?: undefined;
+} | {
+    label: string;
+    href: string;
+    openTab: boolean;
+    icon?: undefined;
     items?: undefined;
 } | {
     label: string;
@@ -61,6 +68,7 @@ export declare const linksSpark: ({
         openTab?: undefined;
     })[];
     href?: undefined;
+    openTab?: undefined;
 })[];
 export declare const MENU_HEIGHT = 80;
 export declare const FOOTER_HEIGHT = 138;
