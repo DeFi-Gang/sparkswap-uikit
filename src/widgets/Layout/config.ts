@@ -249,7 +249,8 @@ export const linksSpark = [
     items: [
       {
         label: "Overview",
-        href: "/overview",
+        href: "https://perps.sparkswap.xyz",
+        openTab: true
       },
       {
         label: "Tokens",

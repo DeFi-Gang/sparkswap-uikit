@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 
 import { NavHeaderEntry } from "./NavHeaderEntry";
-import NavLinkHeader from "./NavLink";
 import HeaderNavAccordion from "./HeaderNavAccordion";
+import MenuLink from "./MenuLink";
 
 import { HeaderNavProps, NavEntry } from "./types";
+
 
 interface Props extends HeaderNavProps {
   handleOpenAccordion: (close?: boolean) => void;
@@ -95,11 +96,11 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
                     onClick={() => handleClick(index)}
                   >
                     {item.openTab ? (
-                      <NavLinkHeader target="_blank" href={item.href}>
+                      <MenuLink target="_blank" href={item.href}>
                         {item.label}
-                      </NavLinkHeader>
+                      </MenuLink>
                     ) : (
-                      <NavLinkHeader href={item.href}>{item.label}</NavLinkHeader>
+                      <MenuLink href={item.href}>{item.label}</MenuLink>
                     )}
                   </NavHeaderEntry>
                 ))}
@@ -113,9 +114,9 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
             isActive={!!entry.href && isLinkActive(entry.href)}
             className={calloutClass}
           >
-            <NavLinkHeader href={entry.href} onClick={() => handleClick(index)}>
+            <MenuLink href={entry.href} onClick={() => handleClick(index)}>
               {entry.label}
-            </NavLinkHeader>
+            </MenuLink>
           </NavHeaderEntry>
         );
       })}

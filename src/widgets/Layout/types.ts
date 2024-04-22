@@ -29,6 +29,7 @@ export interface MenuSubEntry {
 export interface NavEntry {
   label: string;
   items?: MenuSubEntry[];
+  openTab?: boolean;
   href?: string;
   calloutClass?: string;
   initialOpenState?: boolean;
