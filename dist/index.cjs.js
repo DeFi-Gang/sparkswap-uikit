@@ -2470,15 +2470,6 @@ NavHeaderEntry.defaultProps = {
 };
 var templateObject_1$H;
 
-var NavLinkHeader = function (_a) {
-    var href = _a.href, otherProps = __rest(_a, ["href"]);
-    var isHttpLink = href === null || href === void 0 ? void 0 : href.startsWith("http");
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    var Tag = isHttpLink ? "a" : reactRouterDom.NavLink;
-    var props = isHttpLink ? { href: href, target: "_blank", rel: "noopener noreferrer" } : { to: href };
-    return React__default['default'].createElement(Tag, __assign({}, props, otherProps));
-};
-
 var Container$4 = styled__default['default'].div(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n  position: relative;\n  height: ", "px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n  position: relative;\n  height: ", "px;\n"])), MENU_ENTRY_HEIGHT);
 var AccordionContent$1 = styled__default['default'].div(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-in;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  position: absolute;\n  z-index: 22;\n  border-radius: 4px;\n  min-width: 220px;\n  top: 50px;\n  overflow: hidden;\n  background-color: ", ";\n  padding: ", ";\n"], ["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out, padding 0.3s ease-in;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  position: absolute;\n  z-index: 22;\n  border-radius: 4px;\n  min-width: 220px;\n  top: 50px;\n  overflow: hidden;\n  background-color: ", ";\n  padding: ", ";\n"])), function (_a) {
     var isOpen = _a.isOpen, maxHeight = _a.maxHeight;
@@ -2541,10 +2532,10 @@ var HeaderNav = function (_a) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         if (entry.items) {
             return (React__default['default'].createElement("div", { ref: ref, key: entry.label },
-                React__default['default'].createElement(HeaderNavAccordion$1, { isOpen: openAccordionIndex === index, isActive: isParentActive(entry), handleClick: function () { return handleClick(index, true); }, key: entry.label, label: entry.label, className: calloutClass }, entry.items.map(function (item) { return (React__default['default'].createElement(NavHeaderEntry, { isInAccordion: true, key: item.label, secondary: true, isActive: isLinkActive(item.href), onClick: function () { return handleClick(index); } }, item.openTab ? (React__default['default'].createElement(NavLinkHeader, { target: "_blank", href: item.href }, item.label)) : (React__default['default'].createElement(NavLinkHeader, { href: item.href }, item.label)))); }))));
+                React__default['default'].createElement(HeaderNavAccordion$1, { isOpen: openAccordionIndex === index, isActive: isParentActive(entry), handleClick: function () { return handleClick(index, true); }, key: entry.label, label: entry.label, className: calloutClass }, entry.items.map(function (item) { return (React__default['default'].createElement(NavHeaderEntry, { isInAccordion: true, key: item.label, secondary: true, isActive: isLinkActive(item.href), onClick: function () { return handleClick(index); } }, item.openTab ? (React__default['default'].createElement(MenuLink, { target: "_blank", href: item.href }, item.label)) : (React__default['default'].createElement(MenuLink, { href: item.href }, item.label)))); }))));
         }
         return (React__default['default'].createElement(NavHeaderEntry, { key: entry.label, isActive: !!entry.href && isLinkActive(entry.href), className: calloutClass },
-            React__default['default'].createElement(NavLinkHeader, { href: entry.href, onClick: function () { return handleClick(index); } }, entry.label)));
+            React__default['default'].createElement(MenuLink, { href: entry.href, onClick: function () { return handleClick(index); } }, entry.label)));
     })));
 };
 var templateObject_1$J;
