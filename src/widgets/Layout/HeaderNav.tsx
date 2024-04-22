@@ -8,7 +8,6 @@ import MenuLink from "./MenuLink";
 
 import { HeaderNavProps, NavEntry } from "./types";
 
-
 interface Props extends HeaderNavProps {
   handleOpenAccordion: (close?: boolean) => void;
 }
