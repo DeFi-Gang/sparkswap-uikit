@@ -225,9 +225,9 @@ export const linksSpark = [
     href: "/bridge",
   },
   {
-    label: 'Vaults',
-    href: 'https://vaults.sparkswap.xyz',
-    openTab: true
+    label: "Vaults",
+    href: "https://vaults.sparkswap.xyz",
+    openTab: true,
   },
   {
     label: "Trade",

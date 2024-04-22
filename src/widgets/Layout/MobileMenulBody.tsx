@@ -61,8 +61,8 @@ const MobileMenuBody: React.FC<Props> = ({ pushNav, links }) => {
               </MenuLink>
             ) : (
               <MenuLink href={entry.href} onClick={pushNav}>
-                <LinkLabel>{entry.label}
-                </LinkLabel></MenuLink>
+                <LinkLabel>{entry.label}</LinkLabel>
+              </MenuLink>
             )}
           </MobileMenuEntry>
         );

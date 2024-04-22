@@ -118,7 +118,9 @@ const HeaderNav: React.FC<Props> = ({ links, handleOpenAccordion }) => {
                 {entry.label}
               </MenuLink>
             ) : (
-              <MenuLink href={entry.href} onClick={() => handleClick(index)}>{entry.label}</MenuLink>
+              <MenuLink href={entry.href} onClick={() => handleClick(index)}>
+                {entry.label}
+              </MenuLink>
             )}
           </NavHeaderEntry>
         );
