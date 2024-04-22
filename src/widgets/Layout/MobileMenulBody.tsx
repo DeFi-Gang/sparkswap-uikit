@@ -55,9 +55,15 @@ const MobileMenuBody: React.FC<Props> = ({ pushNav, links }) => {
         }
         return (
           <MobileMenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
-            <MenuLink href={entry.href} onClick={pushNav}>
-              <LinkLabel>{entry.label}</LinkLabel>
-            </MenuLink>
+            {entry.openTab ? (
+              <MenuLink target="_blank" href={entry.href} onClick={pushNav}>
+                <LinkLabel>{entry.label}</LinkLabel>
+              </MenuLink>
+            ) : (
+              <MenuLink href={entry.href} onClick={pushNav}>
+                <LinkLabel>{entry.label}
+                </LinkLabel></MenuLink>
+            )}
           </MobileMenuEntry>
         );
       })}
