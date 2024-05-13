@@ -4,14 +4,6 @@ import Heading from "../../components/Heading/Heading";
 import Flex from "../../components/Flex/Flex";
 import { ArrowBackIcon, CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
-import { InjectedProps } from "./types";
-
-interface Props extends InjectedProps {
-  title: string;
-  hideCloseButton?: boolean;
-  onBack?: () => void;
-  bodyPadding?: string;
-}
 
 const StyledModal = styled.div`
   background: ${({ theme }) => theme.modal.background};

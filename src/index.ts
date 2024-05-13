@@ -30,6 +30,7 @@ export * from "./widgets/Modal";
 export * from "./widgets/Toast";
 export * from "./widgets/WalletModal";
 export * from "./widgets/Layout";
+// eslint-disable-next-line import/export
 export * from "./widgets/Layout/UserBlock";
 
 // Theme
