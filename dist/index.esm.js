@@ -2613,13 +2613,13 @@ var MobileOnlyOverlay = styled(Overlay)(templateObject_5$2 || (templateObject_5$
     return theme.mediaQueries.md;
 });
 var Layout = function (_a) {
-    var _b, _c;
+    var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, links = _a.links, socialLinks = _a.socialLinks, profile = _a.profile, children = _a.children, docs = _a.docs;
-    var _d = useMatchBreakpoints(), isXs = _d.isXs, isSm = _d.isSm, isMd = _d.isMd;
+    var _c = useMatchBreakpoints(), isXs = _c.isXs, isSm = _c.isSm, isMd = _c.isMd;
     var isMobile = isXs || isSm || isMd;
-    var _e = useState(false), scrolled = _e[0], setScrolled = _e[1];
-    var _f = useState(false), isMobileMenuOpen = _f[0], seIsMobileMenuOpen = _f[1];
-    var _g = useState(false), filledBackground = _g[0], setFilledBackground = _g[1];
+    var _d = useState(false), scrolled = _d[0], setScrolled = _d[1];
+    var _e = useState(false), isMobileMenuOpen = _e[0], seIsMobileMenuOpen = _e[1];
+    var _f = useState(false), filledBackground = _f[0], setFilledBackground = _f[1];
     var refPrevOffset = useRef(window.pageYOffset);
     useEffect(function () {
         var handleScroll = function () {
@@ -2668,7 +2668,7 @@ var Layout = function (_a) {
     return (React.createElement(Wrapper$1, null,
         React.createElement(StyledNav, { scrolled: scrolled, filledBackground: filledBackground || isMobileMenuOpen },
             React.createElement(StyledNavContainer, null,
-                React.createElement(Logo$1, { href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+                React.createElement(Logo$1, { href: "https://sparkswap.xyz" }),
                 isMobile ? (React.createElement(React.Fragment, null,
                     React.createElement(MenuButton, { "aria-label": "Toggle menu", onClick: toggleMobileMenu }, isMobileMenuOpen ? (React.createElement(Icon$L, { width: "24px", color: "textSubtle" })) : (React.createElement(Icon$K, { width: "24px", color: "textSubtle" }))))) : (React.createElement(React.Fragment, null,
                     React.createElement(HeaderNav, { links: links, handleOpenAccordion: handleOpenAccordion }),
@@ -2679,7 +2679,7 @@ var Layout = function (_a) {
             isMobile && (React.createElement(MobileMenuSideBar, { showMenu: isMobileMenuOpen, pushNav: handleMobileMenuClick, links: links, account: account, login: login, logout: logout, profile: profile })),
             children,
             React.createElement(MobileOnlyOverlay, { show: isMobileMenuOpen, onClick: handleMobileOverlayClick, role: "presentation", zIndex: 20 })),
-        React.createElement(Footer$1, { socialLinks: socialLinks, docs: docs, logoLink: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" })));
+        React.createElement(Footer$1, { socialLinks: socialLinks, docs: docs, logoLink: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" })));
 };
 var Layout$1 = memo(Layout);
 var templateObject_1$L, templateObject_2$i, templateObject_3$8, templateObject_4$3, templateObject_5$2;

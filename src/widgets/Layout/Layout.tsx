@@ -139,7 +139,7 @@ const Layout: FC<NavProps> = ({ account, login, logout, links, socialLinks, prof
     <Wrapper>
       <StyledNav scrolled={scrolled} filledBackground={filledBackground || isMobileMenuOpen}>
         <StyledNavContainer>
-          <Logo href={homeLink?.href ?? "/"} />
+          <Logo href="https://sparkswap.xyz" />
           {isMobile ? (
             <>
               <MenuButton aria-label="Toggle menu" onClick={toggleMobileMenu}>
