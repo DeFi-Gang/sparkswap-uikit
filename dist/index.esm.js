@@ -2555,7 +2555,7 @@ var Container$6 = styled.div(templateObject_2$h || (templateObject_2$h = __makeT
     return theme.mediaQueries.sm;
 });
 var SocialLinksWrap = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  gap: 16px;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  gap: 16px;\n"])));
-var RightBlock = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 24px;\n  ", " {\n    align-items: flex-end;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 24px;\n  ", " {\n    align-items: flex-end;\n  }\n"])), function (_a) {
+var RightBlock = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 12px;\n  ", " {\n    align-items: flex-end;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 12px;\n  ", " {\n    align-items: flex-end;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -2578,7 +2578,7 @@ var Footer = function (_a) {
                         React.createElement(Icon, __assign({}, iconProps))));
                 })),
                 React.createElement(SocialLinksWrap, null, docs.map(function (doc) {
-                    return (React.createElement(Link, { external: true, key: doc.title, href: doc.href, style: { display: 'flex', gap: '4px' } },
+                    return (React.createElement(Link, { external: true, key: doc.title, href: doc.href, style: { display: "flex", gap: "4px", alignItems: 'center', color: '#E9E9E9' } },
                         doc.title,
                         " ",
                         React.createElement(Icon$R, null)));

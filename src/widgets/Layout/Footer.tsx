@@ -52,7 +52,7 @@ const RightBlock = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
   ${({ theme }) => theme.mediaQueries.sm} {
     align-items: flex-end;
   }
@@ -89,7 +89,12 @@ const Footer: FC<Props> = ({ socialLinks, logoLink, docs }) => {
           <SocialLinksWrap>
             {docs.map((doc) => {
               return (
-                <Link external key={doc.title} href={doc.href} style={{ display: "flex", gap: "4px" }}>
+                <Link
+                  external
+                  key={doc.title}
+                  href={doc.href}
+                  style={{ display: "flex", gap: "4px", alignItems: "center", color: "#E9E9E9" }}
+                >
                   {doc.title} <LinkIcon />
                 </Link>
               );
