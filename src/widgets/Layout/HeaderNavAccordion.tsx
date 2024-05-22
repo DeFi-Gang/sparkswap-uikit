@@ -44,7 +44,7 @@ const HeaderNavAccordion: FC<Props> = ({ label, isOpen, handleClick, children, c
     <Container>
       <NavHeaderEntry onClick={handleClick} className={className} isActive={isActive}>
         {label}
-        {isOpen ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
+        {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
       </NavHeaderEntry>
       <AccordionContent isOpen={isOpen} maxHeight={(React.Children.count(children) + 8) * MENU_ENTRY_HEIGHT + 32}>
         {children}

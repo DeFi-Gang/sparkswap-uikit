@@ -2477,7 +2477,7 @@ var HeaderNavAccordion = function (_a) {
     return (React.createElement(Container$4, null,
         React.createElement(NavHeaderEntry, { onClick: handleClick, className: className, isActive: isActive },
             label,
-            isOpen ? React.createElement(Icon$7, null) : React.createElement(Icon$8, null)),
+            isOpen ? React.createElement(Icon$8, null) : React.createElement(Icon$7, null)),
         React.createElement(AccordionContent$1, { isOpen: isOpen, maxHeight: (React.Children.count(children) + 8) * MENU_ENTRY_HEIGHT + 32 }, children)));
 };
 var HeaderNavAccordion$1 = memo(HeaderNavAccordion);

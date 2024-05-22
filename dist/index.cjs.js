@@ -2490,7 +2490,7 @@ var HeaderNavAccordion = function (_a) {
     return (React__default['default'].createElement(Container$4, null,
         React__default['default'].createElement(NavHeaderEntry, { onClick: handleClick, className: className, isActive: isActive },
             label,
-            isOpen ? React__default['default'].createElement(Icon$7, null) : React__default['default'].createElement(Icon$8, null)),
+            isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null)),
         React__default['default'].createElement(AccordionContent$1, { isOpen: isOpen, maxHeight: (React__default['default'].Children.count(children) + 8) * MENU_ENTRY_HEIGHT + 32 }, children)));
 };
 var HeaderNavAccordion$1 = React.memo(HeaderNavAccordion);
