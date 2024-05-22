@@ -2578,7 +2578,7 @@ var Footer = function (_a) {
                         React.createElement(Icon, __assign({}, iconProps))));
                 })),
                 React.createElement(SocialLinksWrap, null, docs.map(function (doc) {
-                    return (React.createElement(Link, { external: true, key: doc.title, href: doc.href, style: { display: "flex", gap: "4px", alignItems: 'center', color: '#E9E9E9' } },
+                    return (React.createElement(Link, { external: true, key: doc.title, href: doc.href, style: { display: "flex", gap: "4px", alignItems: "center", color: "#E9E9E9", fontWeight: 400 } },
                         doc.title,
                         " ",
                         React.createElement(Icon$R, null)));

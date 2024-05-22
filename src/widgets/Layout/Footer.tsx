@@ -93,7 +93,7 @@ const Footer: FC<Props> = ({ socialLinks, logoLink, docs }) => {
                   external
                   key={doc.title}
                   href={doc.href}
-                  style={{ display: "flex", gap: "4px", alignItems: "center", color: "#E9E9E9" }}
+                  style={{ display: "flex", gap: "4px", alignItems: "center", color: "#E9E9E9", fontWeight: 400 }}
                 >
                   {doc.title} <LinkIcon />
                 </Link>
