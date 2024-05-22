@@ -37,8 +37,13 @@ export interface SocialEntry {
     href: string;
     icon: IconType;
 }
+export interface DocsEntry {
+    title: string;
+    href: string;
+}
 export interface FooterLinks {
     socialLinks: Array<SocialEntry>;
+    docs: Array<DocsEntry>;
 }
 export interface NavProps extends HeaderNavProps, FooterLinks, PropsWithChildren<unknown> {
     account?: string;

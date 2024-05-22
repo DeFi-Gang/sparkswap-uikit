@@ -74,7 +74,7 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
-const Layout: FC<NavProps> = ({ account, login, logout, links, socialLinks, profile, children }) => {
+const Layout: FC<NavProps> = ({ account, login, logout, links, socialLinks, profile, children, docs }) => {
   const { isXs, isSm, isMd } = useMatchBreakpoints();
   const isMobile = isXs || isSm || isMd;
 
@@ -177,7 +177,7 @@ const Layout: FC<NavProps> = ({ account, login, logout, links, socialLinks, prof
         {children}
         <MobileOnlyOverlay show={isMobileMenuOpen} onClick={handleMobileOverlayClick} role="presentation" zIndex={20} />
       </BodyWrapper>
-      <Footer socialLinks={socialLinks} logoLink={homeLink?.href ?? "/"} />
+      <Footer socialLinks={socialLinks} docs={docs} logoLink={homeLink?.href ?? "/"} />
     </Wrapper>
   );
 };

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SvgProps } from "../../components/Svg";
 import * as IconModule from "./icons";
 import { Link } from "../../components/Link";
+import { LinkIcon } from "./icons";
 import Logo from "./Logo";
 
 import { FOOTER_HEIGHT, FOOTER_HEIGHT_MOBILE } from "./config";
@@ -66,7 +67,7 @@ const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 interface Props extends FooterLinks {
   logoLink: string;
 }
-const Footer: FC<Props> = ({ socialLinks, logoLink }) => {
+const Footer: FC<Props> = ({ socialLinks, logoLink, docs }) => {
   const currentYear = new Date().getFullYear();
   return (
     <StyledFooter>
@@ -81,6 +82,15 @@ const Footer: FC<Props> = ({ socialLinks, logoLink }) => {
               return (
                 <Link external key={social.label} href={social.href} aria-label={social.label}>
                   <Icon {...iconProps} />
+                </Link>
+              );
+            })}
+          </SocialLinksWrap>
+          <SocialLinksWrap>
+            {docs.map((doc) => {
+              return (
+                <Link external key={doc.title} href={doc.href} style={{ display: "flex", gap: "4px" }}>
+                  {doc.title} <LinkIcon />
                 </Link>
               );
             })}
